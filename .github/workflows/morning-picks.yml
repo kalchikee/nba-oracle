@@ -2,8 +2,8 @@ name: Morning Picks
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # 6:00 AM CST (UTC-6) | 7:00 AM CDT (UTC-5) during daylight saving
-  workflow_dispatch:        # Manual trigger for testing
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
 jobs:
   morning-picks:
@@ -17,17 +17,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
 
-      # Download DB from the most recent previous run (silently skips on first run)
       - name: Restore database
-        uses: dawidd6/action-download-artifact@v6
+        uses: actions/cache@v4
         with:
-          name: nba-oracle-db
-          path: data/
-          if_no_artifact_found: ignore
-          workflow_conclusion: ''  # Accept artifacts from any conclusion (success/failure)
-        continue-on-error: true
+          path: data/nba_oracle.db
+          key: nba-oracle-db-${{ github.run_id }}
+          restore-keys: |
+            nba-oracle-db-
 
       - name: Install dependencies
         run: npm ci
@@ -38,12 +36,9 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           LOG_LEVEL: info
 
-      # Always save the DB so the recap job can use it later tonight
       - name: Save database
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/cache/save@v4
         with:
-          name: nba-oracle-db
           path: data/nba_oracle.db
-          retention-days: 7
-          overwrite: true
+          key: nba-oracle-db-${{ github.run_id }}
