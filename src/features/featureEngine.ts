@@ -40,12 +40,12 @@ export async function computeFeatures(
     awayPlayers,
   ] = await Promise.all([
     fetchAllTeamStats(season),
-    fetchTeamRollingStats(homeAbbr, 10, season),
-    fetchTeamRollingStats(awayAbbr, 10, season),
+    fetchTeamRollingStats(homeAbbr, 10),
+    fetchTeamRollingStats(awayAbbr, 10),
     fetchInjuries(),
-    fetchHeadToHeadRecord(homeAbbr, awayAbbr, season),
-    fetchTeamLastGameDate(homeAbbr, gameDate, season),
-    fetchTeamLastGameDate(awayAbbr, gameDate, season),
+    fetchHeadToHeadRecord(homeAbbr, awayAbbr),
+    fetchTeamLastGameDate(homeAbbr, gameDate),
+    fetchTeamLastGameDate(awayAbbr, gameDate),
     getPlayersByTeam(homeAbbr, season),
     getPlayersByTeam(awayAbbr, season),
   ]);
