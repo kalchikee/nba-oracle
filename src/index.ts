@@ -115,12 +115,9 @@ async function runMorningAlert(date: string): Promise<void> {
   const { sendMorningBriefingEmail } = await import('./alerts/email.js');
 
   await initDb();
-  let predictions = getPredictionsByDate(date);
 
-  if (predictions.length === 0) {
-    logger.warn({ date }, 'No predictions in DB — running pipeline first');
-    predictions = await runPipeline({ date, verbose: false });
-  }
+  // Always re-run the pipeline — never serve stale DB predictions
+  const predictions = await runPipeline({ date, verbose: false });
 
   // Discord: picks + bet recommendations (two embeds in one message)
   await sendMorningBriefing(date);
