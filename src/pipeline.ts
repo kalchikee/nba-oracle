@@ -112,10 +112,17 @@ async function processGame(
   const mc = runMonteCarlo(features);
 
   // ── Step C: ML calibration ──────────────────────────────────────────────────
+  // The ML model's mc_win_pct feature must match the training computation exactly:
+  //   mc_prob = 0.5 * elo_win_prob + 0.5 * sigmoid(net_rtg_diff / 8)
+  // The full MC simulation is used for expected scores/spread display, NOT as the ML input.
+  const eloWinProb = 1 / (1 + Math.pow(10, -features.elo_diff / 400));
+  const logisticNetRtg = 1 / (1 + Math.exp(-features.net_rtg_diff / 8.0));
+  const trainingMcProb = 0.5 * eloWinProb + 0.5 * logisticNetRtg;
+
   let calibrated_prob: number;
 
   if (modelLoaded && isModelLoaded()) {
-    calibrated_prob = mlPredict(features, mc.win_probability);
+    calibrated_prob = mlPredict(features, trainingMcProb);
     logger.debug(
       {
         gameId: game.gameId,

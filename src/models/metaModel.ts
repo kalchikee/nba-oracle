@@ -176,13 +176,20 @@ export function predict(features: FeatureVector, mcWinProb: number): number {
 
   // Build & standardize feature array
   const rawFeatures = buildFeatureArray(features, featureNames);
+
+  // mc_win_pct is a training feature — must be injected here since it lives outside FeatureVector
+  const mcIdx = featureNames.indexOf('mc_win_pct');
+  if (mcIdx >= 0) rawFeatures[mcIdx] = mcWinProb;
+
   const n = featureNames.length;
 
   let logit = intercept;
   for (let i = 0; i < n; i++) {
-    const scaled = scalerScale[i] > 0
-      ? (rawFeatures[i] - scalerMean[i]) / scalerScale[i]
-      : 0;
+    if (scalerScale[i] <= 0) continue;
+    // Clip to ±3σ — prevents out-of-distribution season-average features from
+    // overwhelming the model (training used rolling 15-game windows, narrower distribution)
+    const z = (rawFeatures[i] - scalerMean[i]) / scalerScale[i];
+    const scaled = Math.max(-3, Math.min(3, z));
     logit += coefficients[i] * scaled;
   }
 

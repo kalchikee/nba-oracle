@@ -51,6 +51,14 @@ const ABBR_TO_ESPN_ID: Record<string, number> = Object.fromEntries(
 
 const HIGH_ALTITUDE_TEAMS = new Set(['DEN']);
 
+// ESPN uses non-standard abbreviations for 6 teams — normalize to our NBA mappings
+const ESPN_ABBR_FIX: Record<string, string> = {
+  GS: 'GSW', NO: 'NOP', NY: 'NYK', SA: 'SAS', UTAH: 'UTA', WSH: 'WAS',
+};
+function fixAbbr(abbr: string): string {
+  return ESPN_ABBR_FIX[abbr] ?? abbr;
+}
+
 // ─── Cache helpers ─────────────────────────────────────────────────────────────
 
 function cacheKey(url: string): string {
@@ -163,8 +171,8 @@ export async function fetchSchedule(date: string): Promise<NBAGame[]> {
     const away = comp.competitors.find(c => c.homeAway === 'away');
     if (!home || !away) continue;
 
-    const homeAbbr = home.team.abbreviation;
-    const awayAbbr = away.team.abbreviation;
+    const homeAbbr = fixAbbr(home.team.abbreviation);
+    const awayAbbr = fixAbbr(away.team.abbreviation);
     const homeId = ABBR_TO_TEAM_ID[homeAbbr] ?? 0;
     const awayId = ABBR_TO_TEAM_ID[awayAbbr] ?? 0;
     const statusDesc = event.status.type.description;
@@ -313,6 +321,10 @@ export async function fetchAllTeamStats(_season?: string): Promise<Map<number, N
     const fta  = getStat(cats, 'avgFreeThrowsAttempted')           ?? 18;
     const oreb = getStat(cats, 'avgOffensiveRebounds')             ?? 9;
     const tov  = getStat(cats, 'avgTurnovers')                     ?? 13;
+    const ast  = getStat(cats, 'avgAssists')                       ?? 24;
+    const stl  = getStat(cats, 'avgSteals')                        ?? 7;
+    const blk  = getStat(cats, 'avgBlocks')                        ?? 5;
+    const dreb = getStat(cats, 'avgDefensiveRebounds')             ?? 34;
 
     // ── Possession-adjusted ratings ────────────────────────────────────────
     const possEst    = Math.max(fga - oreb + tov + 0.44 * fta, 80);
@@ -320,14 +332,21 @@ export async function fetchAllTeamStats(_season?: string): Promise<Map<number, N
     const defRtg     = (oppPts / possEst) * 100;  // same pace denom — valid relative comparison
     const netRtg     = offRtg - defRtg;
 
-    // ── Derived shooting metrics ───────────────────────────────────────────
-    const efgPct      = fga > 0 ? (fgm + 0.5 * fg3m) / fga : 0.52;
-    const tovPct      = (tov / possEst) * 100;
-    const ftRate      = fga > 0 ? fta / fga : 0.20;
+    // ── Derived shooting metrics — all in DECIMAL form to match training data ──
+    // Training: tov_pct = tov / poss  (NOT * 100)
+    const efgPct      = fga  > 0 ? (fgm + 0.5 * fg3m) / fga : 0.52;
+    const tovPct      = tov  / possEst;                          // decimal, ~0.13
+    const orbPct      = (oreb + dreb) > 0 ? oreb / (oreb + dreb) : 0.23;
+    const ftRate      = fga  > 0 ? fta / fga : 0.20;
     const threePtPct  = fg3a > 0 ? fg3m / fg3a : 0.36;
-    const threePtRate = fga > 0 ? fg3a / fga : 0.40;
+    const threePtRate = fga  > 0 ? fg3a / fga  : 0.40;
     const tsPct       = (2 * (fga + 0.44 * fta)) > 0
       ? pts / (2 * (fga + 0.44 * fta)) : 0.56;
+
+    // Training: ast_pct = ast / fgm  (~0.57), stl/blk per 100 possessions
+    const astPct = fgm > 0 ? ast / fgm : 0.60;          // decimal ~0.57
+    const stlPct = stl / (possEst / 100);                // steals per 100 poss, ~7–9
+    const blkPct = blk / (possEst / 100);                // blocks per 100 poss, ~4–6
 
     const pythagoreanWinPct =
       Math.pow(offRtg, 14) / (Math.pow(offRtg, 14) + Math.pow(defRtg, 14));
@@ -344,14 +363,14 @@ export async function fetchAllTeamStats(_season?: string): Promise<Map<number, N
       pace:             100,
       efgPct,
       tovPct,
-      orbPct:           0.23,
+      orbPct,
       ftRate,
       threePtPct,
       threePtRate,
       tsPct,
-      astPct:           0.60,
-      stlPct:           0.09,
-      blkPct:           0.08,
+      astPct,
+      stlPct,
+      blkPct,
       pythagoreanWinPct,
       clutchNetRtg:     0,
     });
@@ -582,8 +601,8 @@ export async function fetchCompletedResults(date: string): Promise<GameResult[]>
       results.push({
         game_id:    event.id,
         date,
-        home_team:  home.team.abbreviation,
-        away_team:  away.team.abbreviation,
+        home_team:  fixAbbr(home.team.abbreviation),
+        away_team:  fixAbbr(away.team.abbreviation),
         home_score: Number(home.score ?? 0),
         away_score: Number(away.score ?? 0),
         arena:      comp.venue?.fullName ?? '',
