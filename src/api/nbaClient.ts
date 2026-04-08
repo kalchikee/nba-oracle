@@ -195,7 +195,58 @@ export async function fetchSchedule(date: string): Promise<NBAGame[]> {
   return games;
 }
 
-// ─── Team stats (ESPN) ────────────────────────────────────────────────────────
+// ─── NBA CDN: season scores → per-team PPG and opponent PPG ──────────────────
+// cdn.nba.com is not blocked by Cloudflare. One request gives us all 30 teams'
+// real points scored and allowed, which ESPN's /statistics endpoint omits.
+
+interface CDNGame {
+  gameStatus: number;
+  homeTeam: { teamId: number; teamTricode: string; score: number };
+  awayTeam: { teamId: number; teamTricode: string; score: number };
+}
+
+interface CDNSchedule {
+  leagueSchedule?: { gameDates?: Array<{ games?: CDNGame[] }> };
+}
+
+interface TeamScoreAccum { pts: number; oppPts: number; gp: number; w: number }
+
+async function fetchTeamScoresFromCDN(): Promise<Map<string, TeamScoreAccum>> {
+  const url = 'https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json';
+  let data: CDNSchedule;
+  try {
+    data = await fetchWithRetry<CDNSchedule>(url);
+  } catch {
+    return new Map();
+  }
+
+  const accum = new Map<string, TeamScoreAccum>();
+  const init = () => ({ pts: 0, oppPts: 0, gp: 0, w: 0 });
+
+  for (const day of data.leagueSchedule?.gameDates ?? []) {
+    for (const game of day.games ?? []) {
+      if (game.gameStatus !== 3) continue; // 3 = final
+      const h = game.homeTeam.teamTricode;
+      const a = game.awayTeam.teamTricode;
+      const hs = Number(game.homeTeam.score);
+      const as_ = Number(game.awayTeam.score);
+      if (!hs || !as_) continue;
+
+      if (!accum.has(h)) accum.set(h, init());
+      if (!accum.has(a)) accum.set(a, init());
+
+      const hr = accum.get(h)!;
+      hr.pts += hs; hr.oppPts += as_; hr.gp++; if (hs > as_) hr.w++;
+
+      const ar = accum.get(a)!;
+      ar.pts += as_; ar.oppPts += hs; ar.gp++; if (as_ > hs) ar.w++;
+    }
+  }
+
+  return accum;
+}
+
+// ─── Team stats ────────────────────────────────────────────────────────────────
 
 interface ESPNStatCategory {
   name: string;
@@ -203,7 +254,6 @@ interface ESPNStatCategory {
 }
 
 interface ESPNTeamStatsResp {
-  team?: { id?: string; abbreviation?: string; record?: { items?: Array<{ description?: string; stats?: Array<{ name: string; value: number }> }> } };
   results?: { stats?: { categories?: ESPNStatCategory[] } };
 }
 
@@ -222,63 +272,65 @@ export async function fetchAllTeamStats(_season?: string): Promise<Map<number, N
   const now = Date.now();
   if (_teamStatsCache && now - _teamStatsCacheTime < CACHE_TTL_MS) return _teamStatsCache;
 
+  // Fetch CDN season scores (real PPG/oppPPG) + ESPN shooting stats in parallel
+  const entries = Object.entries(ABBR_TO_ESPN_ID);
+  const [cdnScores, espnResults] = await Promise.all([
+    fetchTeamScoresFromCDN(),
+    Promise.allSettled(
+      entries.map(([abbr, espnId]) =>
+        fetchWithRetry<ESPNTeamStatsResp>(`${ESPN_WEB_BASE}/teams/${espnId}/statistics`)
+          .then(data => ({ abbr, data }))
+      )
+    ),
+  ]);
+
+  // Build ESPN shooting stats lookup by abbr
+  const espnStats = new Map<string, ESPNStatCategory[]>();
+  for (const r of espnResults) {
+    if (r.status !== 'fulfilled') continue;
+    const cats = r.value.data.results?.stats?.categories ?? [];
+    if (cats.length > 0) espnStats.set(r.value.abbr, cats);
+  }
+
   const teamMap = new Map<number, NBATeam>();
 
-  // Fetch all 30 teams' statistics in parallel
-  const entries = Object.entries(ABBR_TO_ESPN_ID);
-  const results = await Promise.allSettled(
-    entries.map(([abbr, espnId]) =>
-      fetchWithRetry<ESPNTeamStatsResp>(`${ESPN_WEB_BASE}/teams/${espnId}/statistics`)
-        .then(data => ({ abbr, espnId, data }))
-    )
-  );
+  for (const [abbr, nbaId] of Object.entries(ABBR_TO_TEAM_ID)) {
+    const cdn   = cdnScores.get(abbr);
+    const cats  = espnStats.get(abbr) ?? [];
 
-  for (const result of results) {
-    if (result.status !== 'fulfilled') continue;
-    const { abbr, data } = result.value;
+    // ── Points from CDN (real game results — no IP block) ──────────────────
+    const gp    = cdn?.gp ?? 1;
+    const pts   = cdn ? cdn.pts / gp : 110;      // points scored per game
+    const oppPts = cdn ? cdn.oppPts / gp : 110;   // points allowed per game
+    const w     = cdn?.w ?? 41;
+    const l     = gp - w;
 
-    const categories = data.results?.stats?.categories ?? [];
+    // ── Shooting stats from ESPN ───────────────────────────────────────────
+    const fgm  = getStat(cats, 'avgFieldGoalsMade')               ?? 40;
+    const fga  = getStat(cats, 'avgFieldGoalsAttempted')           ?? 88;
+    const fg3m = getStat(cats, 'avgThreePointFieldGoalsMade')      ?? 12;
+    const fg3a = getStat(cats, 'avgThreePointFieldGoalsAttempted') ?? 32;
+    const fta  = getStat(cats, 'avgFreeThrowsAttempted')           ?? 18;
+    const oreb = getStat(cats, 'avgOffensiveRebounds')             ?? 9;
+    const tov  = getStat(cats, 'avgTurnovers')                     ?? 13;
 
-    // Points scored / allowed
-    const pts    = getStat(categories, 'avgPoints')         ?? 110;
-    const oppPts = getStat(categories, 'avgPointsAllowed')  ?? 110;
+    // ── Possession-adjusted ratings ────────────────────────────────────────
+    const possEst    = Math.max(fga - oreb + tov + 0.44 * fta, 80);
+    const offRtg     = (pts    / possEst) * 100;
+    const defRtg     = (oppPts / possEst) * 100;  // same pace denom — valid relative comparison
+    const netRtg     = offRtg - defRtg;
 
-    // Shooting
-    const fgm  = getStat(categories, 'avgFieldGoalsMade')               ?? 40;
-    const fga  = getStat(categories, 'avgFieldGoalsAttempted')           ?? 88;
-    const fg3m = getStat(categories, 'avgThreePointFieldGoalsMade')      ?? 12;
-    const fg3a = getStat(categories, 'avgThreePointFieldGoalsAttempted') ?? 32;
-    const ftm  = getStat(categories, 'avgFreeThrowsMade')                ?? 14;
-    const fta  = getStat(categories, 'avgFreeThrowsAttempted')           ?? 18;
-    const oreb = getStat(categories, 'avgOffensiveRebounds')             ?? 9;
-    const tov  = getStat(categories, 'avgTurnovers')                     ?? 13;
-
-    // Derived advanced stats (approximations without real possession data)
-    const possEst   = fga - oreb + tov + 0.44 * fta;        // possession estimate
-    const offRtg    = possEst > 0 ? (pts / possEst) * 100 : pts;
-    const defRtg    = possEst > 0 ? (oppPts / possEst) * 100 : oppPts;
-    const netRtg    = offRtg - defRtg;
-    const efgPct    = fga > 0 ? (fgm + 0.5 * fg3m) / fga : 0.52;
-    const tovPct    = possEst > 0 ? (tov / possEst) * 100 : 13;
-    const orbPct    = 0.23; // no opponent data available — use league avg
-    const ftRate    = fga > 0 ? fta / fga : 0.20;
-    const threePtPct = fg3a > 0 ? fg3m / fg3a : 0.36;
+    // ── Derived shooting metrics ───────────────────────────────────────────
+    const efgPct      = fga > 0 ? (fgm + 0.5 * fg3m) / fga : 0.52;
+    const tovPct      = (tov / possEst) * 100;
+    const ftRate      = fga > 0 ? fta / fga : 0.20;
+    const threePtPct  = fg3a > 0 ? fg3m / fg3a : 0.36;
     const threePtRate = fga > 0 ? fg3a / fga : 0.40;
-    const tsPct     = (2 * (fga + 0.44 * fta)) > 0 ? pts / (2 * (fga + 0.44 * fta)) : 0.56;
+    const tsPct       = (2 * (fga + 0.44 * fta)) > 0
+      ? pts / (2 * (fga + 0.44 * fta)) : 0.56;
 
-    // Pythagorean win probability (Hollinger exponent = 14)
     const pythagoreanWinPct =
-      (Math.pow(offRtg, 14)) / (Math.pow(offRtg, 14) + Math.pow(defRtg, 14));
-
-    // W/L from team record (if available)
-    const recordItems = data.team?.record?.items ?? [];
-    const overallRecord = recordItems.find(r => r.description === 'Overall');
-    const winsLossesStats = overallRecord?.stats ?? [];
-    const w = winsLossesStats.find(s => s.name === 'wins')?.value   ?? 41;
-    const l = winsLossesStats.find(s => s.name === 'losses')?.value ?? 41;
-    const gp = w + l;
-
-    const nbaId = ABBR_TO_TEAM_ID[abbr] ?? 0;
+      Math.pow(offRtg, 14) / (Math.pow(offRtg, 14) + Math.pow(defRtg, 14));
 
     teamMap.set(nbaId, {
       teamId:   nbaId,
@@ -289,28 +341,28 @@ export async function fetchAllTeamStats(_season?: string): Promise<Map<number, N
       offRtg,
       defRtg,
       netRtg,
-      pace:     100,  // league average — not available via ESPN without play-by-play
+      pace:             100,
       efgPct,
       tovPct,
-      orbPct,
+      orbPct:           0.23,
       ftRate,
       threePtPct,
       threePtRate,
       tsPct,
-      astPct:             getStat(categories, 'avgAssists')     ? (getStat(categories, 'avgAssists')! / pts) : 0.60,
-      stlPct:             0.09,
-      blkPct:             0.08,
+      astPct:           0.60,
+      stlPct:           0.09,
+      blkPct:           0.08,
       pythagoreanWinPct,
-      clutchNetRtg:       0,
+      clutchNetRtg:     0,
     });
   }
 
   if (teamMap.size > 0) {
     _teamStatsCache = teamMap;
     _teamStatsCacheTime = now;
-    logger.info({ teams: teamMap.size }, 'Team stats loaded (ESPN)');
+    logger.info({ teams: teamMap.size, cdnTeams: cdnScores.size }, 'Team stats loaded (CDN + ESPN)');
   } else {
-    logger.warn('ESPN team stats returned 0 teams — using defaults');
+    logger.warn('Team stats returned 0 teams');
   }
 
   return teamMap;
