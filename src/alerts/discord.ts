@@ -172,7 +172,7 @@ export async function sendMorningBriefing(date: string): Promise<boolean> {
   const seasonLine = season.total > 0
     ? `📈 Season: **${season.correct}-${season.total - season.correct}** (${((season.correct / season.total) * 100).toFixed(1)}%)` +
       (season.betTotal > 0 ? `  ·  💰 Bets: **${season.betCorrect}-${season.betTotal - season.betCorrect}** (${((season.betCorrect / season.betTotal) * 100).toFixed(1)}%)` : '')
-    : '';
+    : '📈 Season: **0-0** (tracking starts tonight)';
 
   const picksEmbed: DiscordEmbed = {
     title: `🏀 NBA Oracle — Picks for ${date}`,
@@ -274,7 +274,7 @@ export async function sendEveningRecap(
   const seasonSummary = season.total > 0
     ? `📈 Season record: **${season.correct}-${season.total - season.correct}** (${((season.correct / season.total) * 100).toFixed(1)}%)` +
       (season.betTotal > 0 ? `\n💰 Season bets: **${season.betCorrect}-${season.betTotal - season.betCorrect}** (${((season.betCorrect / season.betTotal) * 100).toFixed(1)}%)` : '')
-    : '';
+    : '📈 Season record: **0-0** (tracking starts tonight)';
 
   const summaryLines = [
     total > 0
