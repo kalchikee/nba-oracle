@@ -300,18 +300,48 @@ export async function fetchAllTeamStats(_season?: string): Promise<Map<number, N
     if (cats.length > 0) espnStats.set(r.value.abbr, cats);
   }
 
+  // ── Early-season fallback ──────────────────────────────────────────────────
+  // If fewer than 5 games have been played league-wide (Day 1 to ~Day 3 of a new
+  // season), current-season stats are useless.  Fall back to the previous season's
+  // ESPN stats so features stay meaningful.
+  const maxCdnGames = cdnScores.size > 0
+    ? Math.max(...Array.from(cdnScores.values()).map(v => v.gp))
+    : 0;
+  const isEarlySeason = maxCdnGames < 5;
+
+  let priorEspnStats = new Map<string, ESPNStatCategory[]>();
+  if (isEarlySeason) {
+    const prevYear = getCurrentSeasonYear() - 1;
+    logger.info({ maxCdnGames, prevYear }, 'Early season detected — fetching prior season stats as fallback');
+    const priorResults = await Promise.allSettled(
+      entries.map(([abbr, espnId]) =>
+        fetchWithRetry<ESPNTeamStatsResp>(`${ESPN_WEB_BASE}/teams/${espnId}/statistics?season=${prevYear}`)
+          .then(data => ({ abbr, data }))
+      )
+    );
+    for (const r of priorResults) {
+      if (r.status !== 'fulfilled') continue;
+      const cats = r.value.data.results?.stats?.categories ?? [];
+      if (cats.length > 0) priorEspnStats.set(r.value.abbr, cats);
+    }
+  }
+
   const teamMap = new Map<number, NBATeam>();
 
   for (const [abbr, nbaId] of Object.entries(ABBR_TO_TEAM_ID)) {
-    const cdn   = cdnScores.get(abbr);
-    const cats  = espnStats.get(abbr) ?? [];
+    const cdn = cdnScores.get(abbr);
+    // Prefer current-season ESPN stats; fall back to prior season when early season
+    const currentCats = espnStats.get(abbr) ?? [];
+    const cats = currentCats.length > 0 ? currentCats : (priorEspnStats.get(abbr) ?? []);
 
     // ── Points from CDN (real game results — no IP block) ──────────────────
-    const gp    = cdn?.gp ?? 1;
-    const pts   = cdn ? cdn.pts / gp : 110;      // points scored per game
-    const oppPts = cdn ? cdn.oppPts / gp : 110;   // points allowed per game
-    const w     = cdn?.w ?? 41;
-    const l     = gp - w;
+    const gp     = cdn?.gp ?? 0;
+    const w      = cdn?.w  ?? 0;
+    const l      = gp - w;
+    // Use CDN PPG once 5+ games played; otherwise pull avgPoints from ESPN stats
+    // (oppPts has no ESPN equivalent — use league average 110 in early season)
+    const pts    = gp >= 5 ? cdn!.pts / gp    : (getStat(cats, 'avgPoints') ?? 110);
+    const oppPts = gp >= 5 ? cdn!.oppPts / gp : 110;
 
     // ── Shooting stats from ESPN ───────────────────────────────────────────
     const fgm  = getStat(cats, 'avgFieldGoalsMade')               ?? 40;
@@ -552,28 +582,31 @@ export async function fetchTeamLastGameDate(
   const espnId = ABBR_TO_ESPN_ID[teamAbbr];
   if (!espnId) return null;
 
-  const seasonYear = getCurrentSeasonYear();
-  const url = `${ESPN_BASE}/teams/${espnId}/schedule?season=${seasonYear}`;
-
-  try {
-    const data = await fetchWithRetry<{ events?: Array<{ date: string; competitions?: Array<{ status?: { type?: { completed?: boolean } } }> }> }>(url);
-    const events = (data.events ?? []).filter(e => {
-      const comp = e.competitions?.[0];
-      return comp?.status?.type?.completed === true;
-    });
-
-    // Find the latest completed game before beforeDate
-    let latestDate: string | null = null;
-    for (const event of events) {
-      const d = event.date.split('T')[0];
-      if (d < beforeDate && (!latestDate || d > latestDate)) {
-        latestDate = d;
+  const getLastGameForSeason = async (year: number): Promise<string | null> => {
+    const url = `${ESPN_BASE}/teams/${espnId}/schedule?season=${year}`;
+    try {
+      const data = await fetchWithRetry<{ events?: Array<{ date: string; competitions?: Array<{ status?: { type?: { completed?: boolean } } }> }> }>(url);
+      const events = (data.events ?? []).filter(e => {
+        const comp = e.competitions?.[0];
+        return comp?.status?.type?.completed === true;
+      });
+      let latestDate: string | null = null;
+      for (const event of events) {
+        const d = event.date.split('T')[0];
+        if (d < beforeDate && (!latestDate || d > latestDate)) latestDate = d;
       }
+      return latestDate;
+    } catch {
+      return null;
     }
-    return latestDate;
-  } catch {
-    return null;
-  }
+  };
+
+  const seasonYear = getCurrentSeasonYear();
+  // Try current season first; if no result (e.g. Day 1), fall back to prior season
+  // so rest-day calculations account for the final games of last season.
+  const current = await getLastGameForSeason(seasonYear);
+  if (current) return current;
+  return getLastGameForSeason(seasonYear - 1);
 }
 
 // ─── Completed game results (for recap and Elo updates) ───────────────────────

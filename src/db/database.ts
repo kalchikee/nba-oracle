@@ -304,12 +304,21 @@ export interface SeasonRecord {
   betTotal: number;
 }
 
+function getCurrentSeasonStartDate(): string {
+  const now = new Date();
+  const year = now.getFullYear();
+  // NBA season always starts in October
+  return (now.getMonth() + 1) >= 10 ? `${year}-10-01` : `${year - 1}-10-01`;
+}
+
 export function getSeasonRecord(): SeasonRecord {
+  const seasonStart = getCurrentSeasonStartDate();
   const all = queryOne<{ correct: number; total: number }>(
     `SELECT
        SUM(CASE WHEN correct = 1 THEN 1 ELSE 0 END) as correct,
        COUNT(*) as total
-     FROM predictions WHERE correct IS NOT NULL`
+     FROM predictions WHERE correct IS NOT NULL AND game_date >= ?`,
+    [seasonStart]
   );
   const bets = queryOne<{ correct: number; total: number }>(
     `SELECT
@@ -317,7 +326,9 @@ export function getSeasonRecord(): SeasonRecord {
        COUNT(*) as total
      FROM predictions
      WHERE correct IS NOT NULL
-       AND (calibrated_prob >= 0.67 OR calibrated_prob <= 0.33)`
+       AND game_date >= ?
+       AND (calibrated_prob >= 0.67 OR calibrated_prob <= 0.33)`,
+    [seasonStart]
   );
   return {
     correct:    all?.correct  ?? 0,
