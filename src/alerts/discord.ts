@@ -238,7 +238,7 @@ export async function sendEveningRecap(
   const correct = gradedGames.filter(g => g.prediction.correct).length;
   const total = gradedGames.length;
 
-  if (total === 0) {
+  if (games.length === 0) {
     return sendWebhook({
       embeds: [{
         title: `🌙 NBA Oracle — Recap for ${date}`,
