@@ -4,7 +4,7 @@
 
 import fetch from 'node-fetch';
 import { logger } from '../logger.js';
-import { getPredictionsByDate, initDb, getRecentAccuracy } from '../db/database.js';
+import { getPredictionsByDate, initDb, getRecentAccuracy, getSeasonRecord } from '../db/database.js';
 import { getConfidenceTier } from '../features/marketEdge.js';
 import type { Prediction } from '../types.js';
 
@@ -145,6 +145,7 @@ export async function sendMorningBriefing(date: string): Promise<boolean> {
   const avgAcc = recentAccuracy.length > 0
     ? recentAccuracy.reduce((s, a) => s + a.accuracy, 0) / recentAccuracy.length
     : null;
+  const season = getSeasonRecord();
 
   // ── Embed 1: All Picks ────────────────────────────────────────────────────
   const picksFields: DiscordField[] = [];
@@ -168,9 +169,18 @@ export async function sendMorningBriefing(date: string): Promise<boolean> {
     });
   }
 
+  const seasonLine = season.total > 0
+    ? `📈 Season: **${season.correct}-${season.total - season.correct}** (${((season.correct / season.total) * 100).toFixed(1)}%)` +
+      (season.betTotal > 0 ? `  ·  💰 Bets: **${season.betCorrect}-${season.betTotal - season.betCorrect}** (${((season.betCorrect / season.betTotal) * 100).toFixed(1)}%)` : '')
+    : '';
+
   const picksEmbed: DiscordEmbed = {
     title: `🏀 NBA Oracle — Picks for ${date}`,
-    description: `${predictions.length} games today${avgAcc !== null ? `  ·  7-day accuracy: **${(avgAcc * 100).toFixed(1)}%**` : ''}`,
+    description: [
+      `${predictions.length} games today`,
+      avgAcc !== null ? `7-day accuracy: **${(avgAcc * 100).toFixed(1)}%**` : '',
+      seasonLine,
+    ].filter(Boolean).join('  ·  '),
     color: COLORS.morning,
     fields: picksFields.slice(0, 20),
     footer: { text: '🔥🔥🔥 = Extreme  🔥🔥 = High Conviction  🔥 = Strong  ✅ = Lean  🪙 = Coin Flip' },
@@ -223,6 +233,7 @@ export async function sendEveningRecap(
   games: Array<{ prediction: Prediction; homeScore: number; awayScore: number }>,
   metrics: { accuracy: number; brier: number; highConvAccuracy: number | null }
 ): Promise<boolean> {
+  const season = getSeasonRecord();
   const correct = games.filter(g => g.prediction.correct).length;
   const total = games.length;
 
@@ -253,15 +264,21 @@ export async function sendEveningRecap(
     return `${isCorrect}${wasBet} **${pred.away_team} @ ${pred.home_team}**: ${pred.away_team} ${awayScore}–${homeScore} ${pred.home_team} *(picked ${pickedTeam})*`;
   }).join('\n');
 
+  const seasonSummary = season.total > 0
+    ? `📈 Season record: **${season.correct}-${season.total - season.correct}** (${((season.correct / season.total) * 100).toFixed(1)}%)` +
+      (season.betTotal > 0 ? `\n💰 Season bets: **${season.betCorrect}-${season.betTotal - season.betCorrect}** (${((season.betCorrect / season.betTotal) * 100).toFixed(1)}%)` : '')
+    : '';
+
   const summaryLines = [
-    `**${accEmoji} Overall: ${correct}/${total} correct (${accPct.toFixed(0)}%)**`,
+    `**${accEmoji} Tonight: ${correct}/${total} correct (${accPct.toFixed(0)}%)**`,
     betGames.length > 0
-      ? `**💰 Bet picks: ${betCorrect}/${betGames.length} correct (${((betCorrect / betGames.length) * 100).toFixed(0)}%)**`
+      ? `**💰 Tonight bets: ${betCorrect}/${betGames.length} correct (${((betCorrect / betGames.length) * 100).toFixed(0)}%)**`
       : '**💰 No bets placed today**',
     metrics.highConvAccuracy !== null
       ? `**High-conviction (67%+): ${(metrics.highConvAccuracy * 100).toFixed(0)}%**`
       : '',
     `Brier score: ${metrics.brier.toFixed(4)}`,
+    seasonSummary,
   ].filter(Boolean).join('\n');
 
   const embed: DiscordEmbed = {

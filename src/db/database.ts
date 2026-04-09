@@ -297,6 +297,36 @@ export function getRecentAccuracy(days = 30): AccuracyLog[] {
   );
 }
 
+export interface SeasonRecord {
+  correct: number;
+  total: number;
+  betCorrect: number;
+  betTotal: number;
+}
+
+export function getSeasonRecord(): SeasonRecord {
+  const all = queryOne<{ correct: number; total: number }>(
+    `SELECT
+       SUM(CASE WHEN correct = 1 THEN 1 ELSE 0 END) as correct,
+       COUNT(*) as total
+     FROM predictions WHERE correct IS NOT NULL`
+  );
+  const bets = queryOne<{ correct: number; total: number }>(
+    `SELECT
+       SUM(CASE WHEN correct = 1 THEN 1 ELSE 0 END) as correct,
+       COUNT(*) as total
+     FROM predictions
+     WHERE correct IS NOT NULL
+       AND (calibrated_prob >= 0.67 OR calibrated_prob <= 0.33)`
+  );
+  return {
+    correct:    all?.correct  ?? 0,
+    total:      all?.total    ?? 0,
+    betCorrect: bets?.correct ?? 0,
+    betTotal:   bets?.total   ?? 0,
+  };
+}
+
 export function closeDb(): void {
   if (_db) {
     persistDb();
