@@ -107,8 +107,8 @@ export async function processResults(date: string): Promise<{
     // Update Elo ratings
     updateEloAfterGame(result.home_team, result.away_team, result.home_score, result.away_score);
 
-    // Store calibration log entry
-    if (pred.vegas_prob !== undefined) {
+    // Store calibration log entry (only when we have Vegas odds — null crashes the NOT NULL constraint)
+    if (pred.vegas_prob != null) {
       upsertCalibration({
         date,
         game_id: pred.game_id,
@@ -176,7 +176,7 @@ function computeMetrics(games: GameWithResult[]): DayMetrics {
     }
 
     // Vegas comparison
-    if (pred.vegas_prob !== undefined) {
+    if (pred.vegas_prob != null) {
       vegasBrierSum += Math.pow(pred.vegas_prob - outcome, 2);
       vegasCount++;
     }
