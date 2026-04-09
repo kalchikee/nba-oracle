@@ -9,7 +9,7 @@
 import 'dotenv/config';
 import { logger } from './logger.js';
 import { runPipeline } from './pipeline.js';
-import { closeDb, initDb, getPredictionsByDate } from './db/database.js';
+import { closeDb, initDb } from './db/database.js';
 import type { PipelineOptions } from './types.js';
 
 // ─── CLI argument parsing ─────────────────────────────────────────────────────
@@ -130,9 +130,19 @@ async function runRecapAlert(date: string): Promise<void> {
   const { sendEveningRecapEmail } = await import('./alerts/email.js');
   const { processResults } = await import('./alerts/results.js');
 
-  const { games, metrics } = await processResults(date);
-  await sendEveningRecap(date, games, metrics);
-  await sendEveningRecapEmail(date, games, metrics);
+  await initDb();
+
+  // Recap runs at 1 AM CST — the games being recapped played the previous evening.
+  // Subtract 1 day so we look up yesterday's predictions and results.
+  const d = new Date(date + 'T12:00:00Z'); // noon UTC to avoid any DST edge cases
+  d.setUTCDate(d.getUTCDate() - 1);
+  const recapDate = d.toISOString().split('T')[0];
+
+  logger.info({ recapDate }, 'Running nightly recap');
+
+  const { games, metrics } = await processResults(recapDate);
+  await sendEveningRecap(recapDate, games, metrics);
+  await sendEveningRecapEmail(recapDate, games, metrics);
 }
 
 // ─── Entry point ──────────────────────────────────────────────────────────────
