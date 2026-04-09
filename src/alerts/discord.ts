@@ -234,8 +234,9 @@ export async function sendEveningRecap(
   metrics: { accuracy: number; brier: number; highConvAccuracy: number | null }
 ): Promise<boolean> {
   const season = getSeasonRecord();
-  const correct = games.filter(g => g.prediction.correct).length;
-  const total = games.length;
+  const gradedGames = games.filter(g => g.prediction.correct !== undefined);
+  const correct = gradedGames.filter(g => g.prediction.correct).length;
+  const total = gradedGames.length;
 
   if (total === 0) {
     return sendWebhook({
@@ -248,16 +249,22 @@ export async function sendEveningRecap(
     });
   }
 
-  const accPct = (correct / total) * 100;
-  const recapColor = accPct >= 65 ? COLORS.recap_good : accPct >= 50 ? COLORS.recap_neutral : COLORS.recap_bad;
-  const accEmoji = accPct >= 65 ? '🟢' : accPct >= 50 ? '🟡' : '🔴';
+  const accPct = total > 0 ? (correct / total) * 100 : 0;
+  const recapColor = total === 0 ? COLORS.recap_neutral : accPct >= 65 ? COLORS.recap_good : accPct >= 50 ? COLORS.recap_neutral : COLORS.recap_bad;
+  const accEmoji = total === 0 ? '⚪' : accPct >= 65 ? '🟢' : accPct >= 50 ? '🟡' : '🔴';
 
   // Bet picks performance
-  const betGames = games.filter(g => shouldBet(g.prediction));
+  const betGames = gradedGames.filter(g => shouldBet(g.prediction));
   const betCorrect = betGames.filter(g => g.prediction.correct).length;
 
   // Individual game lines
   const gameLines = games.map(({ prediction: pred, homeScore, awayScore }) => {
+    const noPrediction = pred.correct === undefined && pred.calibrated_prob === 0.5 && pred.mc_win_pct === 0.5;
+    if (noPrediction) {
+      // Results-only — system wasn't running that day
+      const winner = homeScore > awayScore ? pred.home_team : pred.away_team;
+      return `⚪ **${pred.away_team} @ ${pred.home_team}**: ${pred.away_team} ${awayScore}–${homeScore} ${pred.home_team} *(no pick — ${winner} won)*`;
+    }
     const { team: pickedTeam } = getWinner(pred);
     const isCorrect = pred.correct ? '✅' : '❌';
     const wasBet = shouldBet(pred) ? ' 💰' : '';
@@ -270,7 +277,9 @@ export async function sendEveningRecap(
     : '';
 
   const summaryLines = [
-    `**${accEmoji} Tonight: ${correct}/${total} correct (${accPct.toFixed(0)}%)**`,
+    total > 0
+      ? `**${accEmoji} Tonight: ${correct}/${total} correct (${accPct.toFixed(0)}%)**`
+      : `**⚪ ${games.length} games played — no picks were made this day**`,
     betGames.length > 0
       ? `**💰 Tonight bets: ${betCorrect}/${betGames.length} correct (${((betCorrect / betGames.length) * 100).toFixed(0)}%)**`
       : '**💰 No bets placed today**',

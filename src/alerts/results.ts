@@ -38,22 +38,48 @@ export async function processResults(date: string): Promise<{
   // 2. Load predictions from DB for this date
   const predictions = getPredictionsByDate(date);
 
-  if (predictions.length === 0) {
-    logger.warn({ date }, 'No predictions found for this date');
+  if (completedGames.length === 0) {
+    logger.warn({ date }, 'No completed games found for this date');
     return { games: [], metrics: emptyMetrics() };
   }
 
-  // 3. Match results to predictions
+  // 3. Match results to predictions (predictions may be absent — still show results)
   const games: GameWithResult[] = [];
 
   for (const result of completedGames) {
-    // Find matching prediction
+    // Find matching prediction (may not exist if system wasn't running that day)
     const pred = predictions.find(
       p => p.home_team === result.home_team && p.away_team === result.away_team
     );
 
     if (!pred) {
-      logger.debug({ home: result.home_team, away: result.away_team }, 'No prediction found for result');
+      // No prediction — still include the game result for display, with a neutral placeholder
+      logger.debug({ home: result.home_team, away: result.away_team }, 'No prediction for result — showing result only');
+      games.push({
+        prediction: {
+          game_id: result.game_id,
+          game_date: date,
+          home_team: result.home_team,
+          away_team: result.away_team,
+          arena: result.arena,
+          feature_vector: {} as never,
+          home_exp_pts: 0,
+          away_exp_pts: 0,
+          mc_win_pct: 0.5,
+          calibrated_prob: 0.5,   // neutral — no prediction made
+          total_points: result.home_score + result.away_score,
+          spread: 0,
+          most_likely_score: '',
+          upset_probability: 0,
+          blowout_probability: 0,
+          model_version: '4.0.0',
+          actual_winner: result.home_score > result.away_score ? result.home_team : result.away_team,
+          correct: undefined,     // no prediction to grade
+          created_at: new Date().toISOString(),
+        } as Prediction,
+        homeScore: result.home_score,
+        awayScore: result.away_score,
+      });
       continue;
     }
 

@@ -132,11 +132,15 @@ async function runRecapAlert(date: string): Promise<void> {
 
   await initDb();
 
-  // Recap runs at 1 AM CST — the games being recapped played the previous evening.
-  // Subtract 1 day so we look up yesterday's predictions and results.
-  const d = new Date(date + 'T12:00:00Z'); // noon UTC to avoid any DST edge cases
-  d.setUTCDate(d.getUTCDate() - 1);
-  const recapDate = d.toISOString().split('T')[0];
+  // If an explicit --date was passed, use it directly.
+  // Otherwise (scheduled 1 AM CST run), subtract 1 day because games played last evening.
+  const explicitDate = process.argv.includes('--date') || process.argv.includes('-d');
+  let recapDate = date;
+  if (!explicitDate) {
+    const d = new Date(date + 'T12:00:00Z');
+    d.setUTCDate(d.getUTCDate() - 1);
+    recapDate = d.toISOString().split('T')[0];
+  }
 
   logger.info({ recapDate }, 'Running nightly recap');
 
