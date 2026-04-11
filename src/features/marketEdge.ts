@@ -83,3 +83,40 @@ export function shouldAlert(calibratedProb: number): boolean {
   const tier = getConfidenceTier(calibratedProb);
   return tier === 'high_conviction' || tier === 'extreme';
 }
+
+// ─── Signal agreement ─────────────────────────────────────────────────────────
+// Counts how many model signals agree with the pick direction.
+// NBA signals: Elo, season net rating, rolling net rating, rest advantage, momentum.
+// More agreeing signals = pick is backed by multiple independent factors.
+
+export type SignalAgreement = {
+  agreeing: number;
+  total: number;
+  label: 'CONTRARIAN' | 'SPLIT' | 'MAJORITY' | 'CONSENSUS' | 'LOCK';
+};
+
+export function getSignalAgreement(
+  features: Record<string, number>,
+  pickIsHome: boolean,
+): SignalAgreement {
+  const dir = pickIsHome ? 1 : -1;
+  const candidates: Array<number | undefined> = [
+    features['elo_diff'],
+    features['net_rtg_diff'],
+    features['team_10d_net_rtg_diff'],
+    features['rest_days_diff'],
+    features['momentum_diff'],
+  ];
+  const valid = candidates.filter((v): v is number => v != null);
+  const agreeing = valid.filter(v => v * dir > 0).length;
+  const total = valid.length;
+
+  let label: SignalAgreement['label'];
+  if (agreeing === total)  label = 'LOCK';
+  else if (agreeing >= 4)  label = 'CONSENSUS';
+  else if (agreeing >= 3)  label = 'MAJORITY';
+  else if (agreeing >= 2)  label = 'SPLIT';
+  else                     label = 'CONTRARIAN';
+
+  return { agreeing, total, label };
+}
