@@ -1,0 +1,29 @@
+{
+  "sport": "NBA",
+  "model_type": "playoff_logistic_regression",
+  "playoff_weight": 3.0,
+  "cv_accuracy_lr": 0.6217319672472298,
+  "cv_accuracy_xgb": 0.6061209429103854,
+  "feature_names": [
+    "elo_diff",
+    "net_rtg_diff",
+    "win_pct_diff",
+    "ppg_diff",
+    "papg_diff",
+    "off_rtg_diff",
+    "def_rtg_diff",
+    "rest_days_diff",
+    "is_home",
+    "series_game_num",
+    "series_deficit",
+    "is_elimination_game"
+  ],
+  "playoff_seasons": [
+    "2018-19",
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25"
+  ]
+}
