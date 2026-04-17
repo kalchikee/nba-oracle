@@ -200,6 +200,7 @@ export function predict(features: FeatureVector, mcWinProb: number): number {
   // Apply isotonic calibration
   const calibrated = isotonicCalibrate(rawProb, calibX, calibY);
 
-  // Clamp to valid probability range
-  return Math.max(0.01, Math.min(0.99, calibrated));
+  // Cap at 85%: no single game is more predictable than this — prevents
+  // out-of-distribution extremes when calibration tail maps to 1.0
+  return Math.max(0.15, Math.min(0.85, calibrated));
 }
