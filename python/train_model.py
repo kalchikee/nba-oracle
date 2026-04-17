@@ -39,6 +39,7 @@ DB_PATH = PROJECT_ROOT / "data" / "nba_oracle.db"
 MODEL_DIR.mkdir(parents=True, exist_ok=True)
 
 FEATURE_NAMES = [
+    # Core team strength
     "elo_diff",
     "net_rtg_diff",
     "off_rtg_diff",
@@ -46,6 +47,7 @@ FEATURE_NAMES = [
     "pace_diff",
     "pythagorean_diff",
     "log5_prob",
+    # Four factors (shooting efficiency)
     "efg_pct_diff",
     "tov_pct_diff",
     "oreb_pct_diff",
@@ -56,16 +58,22 @@ FEATURE_NAMES = [
     "ast_pct_diff",
     "stl_pct_diff",
     "blk_pct_diff",
+    # Form & momentum
     "team_10d_net_rtg_diff",
     "team_10d_off_rtg_diff",
     "momentum_diff",
+    "lineup_net_rtg_diff",     # form-adjusted (recent vs season baseline)
+    # Fatigue & travel
     "rest_days_diff",
     "b2b_home",
     "b2b_away",
     "altitude_factor",
-    "lineup_net_rtg_diff",
-    "vegas_home_prob",
+    "travel_tz_shift_away",    # timezone hours shifted for away team
+    # Matchup context
+    "h2h_season_record",       # season series record between these teams
+    # Ensemble
     "mc_win_pct",
+    # Dropped: vegas_home_prob (always 0.0 in training — adds scaler bias)
 ]
 
 # ─── Data loaders ─────────────────────────────────────────────────────────────
