@@ -31,9 +31,22 @@ REG_CSV     = DATA_DIR / "training_data.csv"
 PLAYOFF_CSV = DATA_DIR / "playoff_data.csv"
 
 FEATURE_NAMES = [
+    # Core team strength
     "elo_diff", "net_rtg_diff", "win_pct_diff",
     "ppg_diff", "papg_diff", "off_rtg_diff", "def_rtg_diff",
+    # Four factors (shooting efficiency)
+    "efg_pct_diff", "tov_pct_diff", "oreb_pct_diff", "ts_pct_diff",
+    # Form & momentum
+    "momentum_diff",
+    "lineup_net_rtg_diff",
+    # Fatigue & context
     "rest_days_diff", "is_home",
+    "b2b_home", "b2b_away",
+    "altitude_factor",
+    "travel_tz_shift_away",
+    # Matchup
+    "h2h_season_record",
+    # Series context (best-of-7)
     "series_game_num", "series_deficit", "is_elimination_game",
 ]
 PLAYOFF_WEIGHT = 3.0
