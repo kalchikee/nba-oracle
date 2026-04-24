@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-04-24",
+  "generatedAt": "2026-04-24T21:26:58.016Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-04-24-LAL-HOU",
+      "home": "HOU",
+      "away": "LAL",
+      "pickedTeam": "LAL",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401869400",
+        "arena": "Toyota Center (Houston)",
+        "spread": 7.186099999999996,
+        "totalPoints": 227.90609999999998,
+        "mostLikelyScore": "117-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-04-24-SAS-POR",
+      "home": "POR",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401869382",
+        "arena": "Moda Center",
+        "spread": -6.223799999999997,
+        "totalPoints": 228.54340000000002,
+        "mostLikelyScore": "111-117"
+      }
+    }
+  ]
+}
