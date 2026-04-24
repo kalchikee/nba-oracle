@@ -113,11 +113,20 @@ ARCHITECTURE:
 async function runMorningAlert(date: string): Promise<void> {
   const { sendMorningBriefing } = await import('./alerts/discord.js');
   const { sendMorningBriefingEmail } = await import('./alerts/email.js');
+  const { writePredictionsFile } = await import('./kalshi/predictionsFile.js');
 
   await initDb();
 
   // Always re-run the pipeline — never serve stale DB predictions
   const predictions = await runPipeline({ date, verbose: false });
+
+  // Emit predictions JSON for kalshi-safety to consume via GitHub raw URL
+  try {
+    const jsonPath = writePredictionsFile(date, predictions);
+    logger.info({ path: jsonPath, picks: predictions.length }, 'Wrote predictions JSON');
+  } catch (err) {
+    logger.error({ err }, 'Failed to write predictions JSON');
+  }
 
   // Discord: picks + bet recommendations (two embeds in one message)
   await sendMorningBriefing(date);
