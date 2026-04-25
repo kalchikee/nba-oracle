@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-04-25",
+  "generatedAt": "2026-04-25T12:19:49.736Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-04-25-OKC-PHX",
+      "home": "PHX",
+      "away": "OKC",
+      "pickedTeam": "OKC",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401869370",
+        "arena": "Mortgage Matchup Center",
+        "spread": -6.788399999999996,
+        "totalPoints": 228.5918,
+        "mostLikelyScore": "111-117"
+      }
+    }
+  ]
+}
