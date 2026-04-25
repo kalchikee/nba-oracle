@@ -96,9 +96,39 @@ export function loadModel(): boolean {
     const featureNames = scaler.feature_names;
     const n = featureNames.length;
 
+    // Sanity check: scaler arrays must align with feature_names length.
+    if (scaler.mean.length !== n || scaler.scale.length !== n) {
+      logger.error(
+        { features: n, mean: scaler.mean.length, scale: scaler.scale.length },
+        'ML model load aborted: scaler.mean / scaler.scale length disagrees with feature_names — refusing to use the model.',
+      );
+      _model = null;
+      return false;
+    }
+
     const coeffArr = new Float64Array(n);
     for (let i = 0; i < n; i++) {
       coeffArr[i] = coeffs[featureNames[i]] ?? 0;
+    }
+
+    // Sanity check: coefficients are name-keyed in the JSON. If NONE of the
+    // feature_names matched a key (e.g. JSON shape changed to `{coefficients: [...]}`),
+    // every entry will be the `?? 0` fallback — log loud so we don't silently
+    // ship near-50/50 predictions driven only by the intercept.
+    const nonZero = coeffArr.reduce((acc, v) => acc + (v !== 0 ? 1 : 0), 0);
+    const hasNaN = coeffArr.some((v) => Number.isNaN(v));
+    if (nonZero === 0) {
+      logger.error(
+        { features: n, sampleKeys: Object.keys(coeffs).slice(0, 5) },
+        'ML model loaded but ALL coefficients are zero — JSON shape likely mismatched (expected name-keyed dict). Refusing to use the model.',
+      );
+      _model = null;
+      return false;
+    }
+    if (hasNaN) {
+      logger.error({ features: n }, 'ML model has NaN coefficients — refusing to use the model.');
+      _model = null;
+      return false;
     }
 
     _model = {
@@ -113,7 +143,7 @@ export function loadModel(): boolean {
     };
 
     logger.info(
-      { version: meta.version, features: n, avgBrier: meta.avg_brier },
+      { version: meta.version, features: n, avgBrier: meta.avg_brier, nonZeroCoeffs: nonZero },
       'ML meta-model loaded'
     );
     return true;
