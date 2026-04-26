@@ -239,14 +239,8 @@ export async function sendEveningRecap(
   const total = gradedGames.length;
 
   if (games.length === 0) {
-    return sendWebhook({
-      embeds: [{
-        title: `🌙 NBA Oracle — Recap for ${date}`,
-        description: 'No completed games found yet. Results may still be in progress.',
-        color: COLORS.recap_neutral,
-        timestamp: new Date().toISOString(),
-      }],
-    });
+    logger.info({ date }, 'No completed games to recap — skipping Discord notification');
+    return false;
   }
 
   const accPct = total > 0 ? (correct / total) * 100 : 0;
