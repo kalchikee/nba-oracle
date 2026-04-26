@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-04-26",
+  "generatedAt": "2026-04-26T12:21:02.642Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-04-26-SAS-POR",
+      "home": "POR",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401869385",
+        "arena": "Moda Center",
+        "spread": -12.236599999999996,
+        "totalPoints": 228.5906,
+        "mostLikelyScore": "108-120"
+      }
+    }
+  ]
+}
