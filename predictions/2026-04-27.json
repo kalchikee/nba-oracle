@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-04-27",
+  "generatedAt": "2026-04-27T12:40:34.160Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-04-27-OKC-PHX",
+      "home": "PHX",
+      "away": "OKC",
+      "pickedTeam": "OKC",
+      "pickedSide": "away",
+      "modelProb": 0.75,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401869373",
+        "arena": "Mortgage Matchup Center",
+        "spread": -7.065700000000007,
+        "totalPoints": 228.3105,
+        "mostLikelyScore": "111-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-04-27-MIN-DEN",
+      "home": "DEN",
+      "away": "MIN",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401869401",
+        "arena": "Ball Arena",
+        "spread": -1.5515999999999934,
+        "totalPoints": 226.30540000000002,
+        "mostLikelyScore": "112-114"
+      }
+    }
+  ]
+}
