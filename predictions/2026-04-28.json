@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-04-28",
+  "generatedAt": "2026-04-28T12:43:25.779Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-04-28-PHI-BOS",
+      "home": "BOS",
+      "away": "PHI",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401869408",
+        "arena": "TD Garden",
+        "spread": 12.696200000000005,
+        "totalPoints": 228.303,
+        "mostLikelyScore": "120-108"
+      }
+    },
+    {
+      "gameId": "nba-2026-04-28-POR-SAS",
+      "home": "SAS",
+      "away": "POR",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401869386",
+        "arena": "Frost Bank Center",
+        "spread": 12.600700000000003,
+        "totalPoints": 228.3703,
+        "mostLikelyScore": "120-108"
+      }
+    }
+  ]
+}
