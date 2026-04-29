@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-04-29",
+  "generatedAt": "2026-04-29T12:40:29.656Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-04-29-ORL-DET",
+      "home": "DET",
+      "away": "ORL",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401869416",
+        "arena": "Little Caesars Arena",
+        "spread": 2.779200000000003,
+        "totalPoints": 228.2948,
+        "mostLikelyScore": "115-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-04-29-TOR-CLE",
+      "home": "CLE",
+      "away": "TOR",
+      "pickedTeam": "CLE",
+      "pickedSide": "home",
+      "modelProb": 0.6916335930553892,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401869380",
+        "arena": "Rocket Arena",
+        "spread": 3.8755000000000024,
+        "totalPoints": 227.77390000000003,
+        "mostLikelyScore": "116-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-04-29-HOU-LAL",
+      "home": "LAL",
+      "away": "HOU",
+      "pickedTeam": "LAL",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401869407",
+        "arena": "crypto.com Arena",
+        "spread": -1.0211999999999932,
+        "totalPoints": 228.2184,
+        "mostLikelyScore": "113-115"
+      }
+    }
+  ]
+}
