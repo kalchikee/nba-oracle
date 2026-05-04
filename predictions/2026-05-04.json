@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-04",
+  "generatedAt": "2026-05-04T12:41:41.345Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-04-MIN-SAS",
+      "home": "SAS",
+      "away": "MIN",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871152",
+        "arena": "Frost Bank Center",
+        "spread": 9.052499999999995,
+        "totalPoints": 228.81810000000002,
+        "mostLikelyScore": "119-110"
+      }
+    }
+  ]
+}
