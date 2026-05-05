@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-05",
+  "generatedAt": "2026-05-05T12:32:48.920Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-05-CLE-DET",
+      "home": "DET",
+      "away": "CLE",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401871333",
+        "arena": "Little Caesars Arena",
+        "spread": 7.434899999999999,
+        "totalPoints": 228.3495,
+        "mostLikelyScore": "118-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-05-05-LAL-OKC",
+      "home": "OKC",
+      "away": "LAL",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871326",
+        "arena": "Paycom Center",
+        "spread": 14.017799999999994,
+        "totalPoints": 229.6336,
+        "mostLikelyScore": "122-108"
+      }
+    }
+  ]
+}
