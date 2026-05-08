@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-08",
+  "generatedAt": "2026-05-08T12:36:35.745Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-08-NYK-PHI",
+      "home": "PHI",
+      "away": "NYK",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871161",
+        "arena": "Xfinity Mobile Arena",
+        "spread": -5.76809999999999,
+        "totalPoints": 228.2933,
+        "mostLikelyScore": "111-117"
+      }
+    }
+  ]
+}
