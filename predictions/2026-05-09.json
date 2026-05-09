@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-09",
+  "generatedAt": "2026-05-09T12:25:39.378Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-09-DET-CLE",
+      "home": "CLE",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871335",
+        "arena": "Rocket Arena",
+        "spread": -1.990700000000004,
+        "totalPoints": 228.0207,
+        "mostLikelyScore": "113-115"
+      }
+    }
+  ]
+}
