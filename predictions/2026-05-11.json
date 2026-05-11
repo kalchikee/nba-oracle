@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-11",
+  "generatedAt": "2026-05-11T13:07:59.470Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-11-OKC-LAL",
+      "home": "LAL",
+      "away": "OKC",
+      "pickedTeam": "OKC",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871329",
+        "arena": "crypto.com Arena",
+        "spread": -13.665499999999994,
+        "totalPoints": 228.1701,
+        "mostLikelyScore": "107-121"
+      }
+    }
+  ]
+}
