@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-15",
+  "generatedAt": "2026-05-15T12:44:15.904Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-15-DET-CLE",
+      "home": "CLE",
+      "away": "DET",
+      "pickedTeam": "CLE",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871338",
+        "arena": "Rocket Arena",
+        "spread": 2.518199999999993,
+        "totalPoints": 228.36180000000002,
+        "mostLikelyScore": "115-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-05-15-SAS-MIN",
+      "home": "MIN",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871157",
+        "arena": "Target Center",
+        "spread": -3.7231999999999914,
+        "totalPoints": 227.9642,
+        "mostLikelyScore": "112-116"
+      }
+    }
+  ]
+}
