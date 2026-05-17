@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-17",
+  "generatedAt": "2026-05-17T12:26:49.347Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-17-CLE-DET",
+      "home": "DET",
+      "away": "CLE",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401871339",
+        "arena": "Little Caesars Arena",
+        "spread": -0.8223999999999876,
+        "totalPoints": 228.3176,
+        "mostLikelyScore": "114-114"
+      }
+    }
+  ]
+}
