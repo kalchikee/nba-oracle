@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-18",
+  "generatedAt": "2026-05-18T13:23:13.817Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-18-SAS-OKC",
+      "home": "OKC",
+      "away": "SAS",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6363636363636364,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401873197",
+        "arena": "Paycom Center",
+        "spread": 8.9876,
+        "totalPoints": 229.4044,
+        "mostLikelyScore": "119-110"
+      }
+    }
+  ]
+}
