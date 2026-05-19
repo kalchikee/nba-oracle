@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-19",
+  "generatedAt": "2026-05-19T13:15:08.930Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-19-CLE-NYK",
+      "home": "NYK",
+      "away": "CLE",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401873341",
+        "arena": "Madison Square Garden",
+        "spread": 12.9585,
+        "totalPoints": 233.3379,
+        "mostLikelyScore": "123-110"
+      }
+    }
+  ]
+}
