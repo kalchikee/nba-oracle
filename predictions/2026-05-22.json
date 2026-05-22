@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-22",
+  "generatedAt": "2026-05-22T12:57:49.547Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-22-OKC-SAS",
+      "home": "SAS",
+      "away": "OKC",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401873199",
+        "arena": "Frost Bank Center",
+        "spread": -6.891199999999998,
+        "totalPoints": 228.2412,
+        "mostLikelyScore": "110-117"
+      }
+    }
+  ]
+}
