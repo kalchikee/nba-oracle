@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-05-25",
+  "generatedAt": "2026-05-25T13:16:55.078Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-05-25-NYK-CLE",
+      "home": "CLE",
+      "away": "NYK",
+      "pickedTeam": "NYK",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401873344",
+        "arena": "Rocket Arena",
+        "spread": -13.528999999999996,
+        "totalPoints": 228.3048,
+        "mostLikelyScore": "107-121"
+      }
+    }
+  ]
+}
