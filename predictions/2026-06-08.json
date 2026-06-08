@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-06-08",
+  "generatedAt": "2026-06-08T13:35:25.931Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-06-08-SAS-NYK",
+      "home": "NYK",
+      "away": "SAS",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401859965",
+        "arena": "Madison Square Garden",
+        "spread": 7.7398000000000025,
+        "totalPoints": 228.3984,
+        "mostLikelyScore": "118-110"
+      }
+    }
+  ]
+}
