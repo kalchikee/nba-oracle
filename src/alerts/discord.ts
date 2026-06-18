@@ -4,7 +4,7 @@
 
 import fetch from 'node-fetch';
 import { logger } from '../logger.js';
-import { getPredictionsByDate, initDb, getRecentAccuracy, getSeasonRecord } from '../db/database.js';
+import { getPredictionsByDate, initDb, getRecentAccuracy, getSeasonRecord, getConfidenceBuckets } from '../db/database.js';
 import { getConfidenceTier } from '../features/marketEdge.js';
 import type { Prediction } from '../types.js';
 
@@ -159,6 +159,22 @@ export async function sendMorningBriefing(date: string): Promise<boolean> {
       value: `**${pct(seasonAcc)}** · ${season.correct}/${season.total} predictions correct this season`,
       inline: false,
     });
+
+    // Per-confidence-bucket calibration: shows how the model's declared
+    // probability tracks reality at each tier (e.g. of picks tagged
+    // 70-80%, how many actually won). Empty buckets are filtered out
+    // server-side so the embed stays compact early-season.
+    const buckets = getConfidenceBuckets();
+    if (buckets.length > 0) {
+      const lines = buckets.map(b =>
+        `**${b.label}** · ${b.correct}/${b.total} (${pct(b.accuracy)})`
+      );
+      picksFields.push({
+        name: '🎯 Calibration by confidence',
+        value: lines.join('\n'),
+        inline: false,
+      });
+    }
   }
 
   for (const pred of sorted) {
