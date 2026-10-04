@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-04",
+  "generatedAt": "2026-10-04T13:59:29.144Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-04-UTA-DEN",
+      "home": "DEN",
+      "away": "UTA",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401914127",
+        "arena": "CU Events Center",
+        "spread": 8.585899999999995,
+        "totalPoints": 226.1639,
+        "mostLikelyScore": "117-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-04-GSW-LAC",
+      "home": "LAC",
+      "away": "GSW",
+      "pickedTeam": "LAC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401918010",
+        "arena": "Stan Sheriff Center",
+        "spread": 2.2083999999999975,
+        "totalPoints": 228.2674,
+        "mostLikelyScore": "115-113"
+      }
+    }
+  ]
+}
