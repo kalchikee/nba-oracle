@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05T12:23:15.125Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-05-MEM-ATL",
+      "home": "ATL",
+      "away": "MEM",
+      "pickedTeam": "ATL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401898388",
+        "arena": "State Farm Arena",
+        "spread": 6.966800000000006,
+        "totalPoints": 228.3724,
+        "mostLikelyScore": "118-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-05-PHX-DET",
+      "home": "DET",
+      "away": "PHX",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.7145375756198201,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401908947",
+        "arena": "Little Caesars Arena",
+        "spread": 8.223299999999995,
+        "totalPoints": 228.8075,
+        "mostLikelyScore": "118-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-05-NYK-PHI",
+      "home": "PHI",
+      "away": "NYK",
+      "pickedTeam": "NYK",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401914101",
+        "arena": "Xfinity Mobile Arena",
+        "spread": 2.3648000000000025,
+        "totalPoints": 228.1824,
+        "mostLikelyScore": "115-113"
+      }
+    }
+  ]
+}
