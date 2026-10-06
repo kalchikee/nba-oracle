@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-06",
+  "generatedAt": "2026-10-06T12:21:24.188Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-06-BKN-CHA",
+      "home": "CHA",
+      "away": "BKN",
+      "pickedTeam": "CHA",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401901820",
+        "arena": "Spectrum Center",
+        "spread": 12.96860000000001,
+        "totalPoints": 228.1662,
+        "mostLikelyScore": "120-107"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-06-NOP-OKC",
+      "home": "OKC",
+      "away": "NOP",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401898389",
+        "arena": "BOK Center",
+        "spread": 6.310400000000001,
+        "totalPoints": 228.51819999999998,
+        "mostLikelyScore": "117-111"
+      }
+    }
+  ]
+}
