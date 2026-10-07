@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-07T12:22:42.813Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-07-MIN-IND",
+      "home": "IND",
+      "away": "MIN",
+      "pickedTeam": "IND",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401914123",
+        "arena": "Hilton Coliseum",
+        "spread": -2.091300000000004,
+        "totalPoints": 234.5131,
+        "mostLikelyScore": "116-118"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-07-MIL-OKC",
+      "home": "OKC",
+      "away": "MIL",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401908620",
+        "arena": "Paycom Center",
+        "spread": 11.274500000000003,
+        "totalPoints": 234.22390000000001,
+        "mostLikelyScore": "123-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-07-PHX-CHI",
+      "home": "CHI",
+      "away": "PHX",
+      "pickedTeam": "CHI",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401908939",
+        "arena": "United Center",
+        "spread": 9.286699999999996,
+        "totalPoints": 231.3037,
+        "mostLikelyScore": "120-111"
+      }
+    }
+  ]
+}
