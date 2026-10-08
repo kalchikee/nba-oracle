@@ -1,0 +1,87 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-08",
+  "generatedAt": "2026-10-08T12:22:18.584Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-08-NOP-MIA",
+      "home": "MIA",
+      "away": "NOP",
+      "pickedTeam": "MIA",
+      "pickedSide": "home",
+      "modelProb": 0.75,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401898393",
+        "arena": "Kaseya Center",
+        "spread": 5.916699999999992,
+        "totalPoints": 232.7567,
+        "mostLikelyScore": "119-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-08-PHI-BKN",
+      "home": "BKN",
+      "away": "PHI",
+      "pickedTeam": "PHI",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401901823",
+        "arena": "Barclays Center",
+        "spread": -6.9624999999999915,
+        "totalPoints": 227.9457,
+        "mostLikelyScore": "110-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-08-WAS-NYK",
+      "home": "NYK",
+      "away": "WAS",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401906508",
+        "arena": "Madison Square Garden",
+        "spread": 3.6328999999999922,
+        "totalPoints": 225.35070000000002,
+        "mostLikelyScore": "114-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-08-ATL-SAS",
+      "home": "SAS",
+      "away": "ATL",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401898394",
+        "arena": "Frost Bank Center",
+        "spread": 7.300000000000011,
+        "totalPoints": 231.3998,
+        "mostLikelyScore": "119-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-08-SAC-LAL",
+      "home": "LAL",
+      "away": "SAC",
+      "pickedTeam": "LAL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401898717",
+        "arena": "crypto.com Arena",
+        "spread": 5.300600000000003,
+        "totalPoints": 224.78,
+        "mostLikelyScore": "115-110"
+      }
+    }
+  ]
+}
