@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-09",
+  "generatedAt": "2026-10-09T12:20:34.565Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-09-MEM-CHI",
+      "home": "CHI",
+      "away": "MEM",
+      "pickedTeam": "CHI",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401908940",
+        "arena": "United Center",
+        "spread": -1.713000000000008,
+        "totalPoints": 228.3702,
+        "mostLikelyScore": "113-115"
+      }
+    }
+  ]
+}
