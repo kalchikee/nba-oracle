@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T12:20:54.551Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-11-CHI-DEN",
+      "home": "DEN",
+      "away": "CHI",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401908941",
+        "arena": "Ball Arena",
+        "spread": 7.6200000000000045,
+        "totalPoints": 229.8486,
+        "mostLikelyScore": "118-111"
+      }
+    }
+  ]
+}
