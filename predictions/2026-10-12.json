@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-12",
+  "generatedAt": "2026-10-12T12:31:27.639Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-12-LON-POR",
+      "home": "POR",
+      "away": "LON",
+      "pickedTeam": "LON",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401914130",
+        "arena": "Moda Center",
+        "spread": 8.793899999999994,
+        "totalPoints": 228.5199,
+        "mostLikelyScore": "118-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-12-OKC-ATL",
+      "home": "ATL",
+      "away": "OKC",
+      "pickedTeam": "OKC",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401898402",
+        "arena": "State Farm Arena",
+        "spread": 1.6988999999999947,
+        "totalPoints": 227.74450000000002,
+        "mostLikelyScore": "114-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-12-MIN-NYK",
+      "home": "NYK",
+      "away": "MIN",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401914124",
+        "arena": "Madison Square Garden",
+        "spread": -0.31869999999999266,
+        "totalPoints": 232.16649999999998,
+        "mostLikelyScore": "116-116"
+      }
+    }
+  ]
+}
