@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13T12:23:13.768Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-13-IND-OKC",
+      "home": "OKC",
+      "away": "IND",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401908621",
+        "arena": "Paycom Center",
+        "spread": 5.696699999999993,
+        "totalPoints": 224.4479,
+        "mostLikelyScore": "115-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-13-GSW-LAL",
+      "home": "LAL",
+      "away": "GSW",
+      "pickedTeam": "LAL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401898718",
+        "arena": "T-Mobile Arena",
+        "spread": 5.4482,
+        "totalPoints": 228.8032,
+        "mostLikelyScore": "117-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-13-POR-SAC",
+      "home": "SAC",
+      "away": "POR",
+      "pickedTeam": "SAC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401901826",
+        "arena": "Golden 1 Center",
+        "spread": -4.203199999999995,
+        "totalPoints": 231.67680000000001,
+        "mostLikelyScore": "114-118"
+      }
+    }
+  ]
+}
