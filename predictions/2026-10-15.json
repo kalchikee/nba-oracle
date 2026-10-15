@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-15",
+  "generatedAt": "2026-10-15T12:20:35.533Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-15-TOR-NYK",
+      "home": "NYK",
+      "away": "TOR",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401908945",
+        "arena": "Madison Square Garden",
+        "spread": 4.71820000000001,
+        "totalPoints": 228.0288,
+        "mostLikelyScore": "116-111"
+      }
+    }
+  ]
+}
