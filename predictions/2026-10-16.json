@@ -1,0 +1,87 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-16",
+  "generatedAt": "2026-10-16T12:20:21.970Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-16-TOR-DET",
+      "home": "DET",
+      "away": "TOR",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401908946",
+        "arena": "Little Caesars Arena",
+        "spread": 0.0391000000000048,
+        "totalPoints": 228.4823,
+        "mostLikelyScore": "114-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-16-MIL-IND",
+      "home": "IND",
+      "away": "MIL",
+      "pickedTeam": "IND",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401914126",
+        "arena": "Gainbridge Fieldhouse",
+        "spread": 1.9262999999999977,
+        "totalPoints": 231.3449,
+        "mostLikelyScore": "117-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-16-SAC-SAS",
+      "home": "SAS",
+      "away": "SAC",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401898843",
+        "arena": "Frost Bank Center",
+        "spread": 8.336300000000008,
+        "totalPoints": 224.99630000000002,
+        "mostLikelyScore": "116-108"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-16-MIN-CHI",
+      "home": "CHI",
+      "away": "MIN",
+      "pickedTeam": "CHI",
+      "pickedSide": "home",
+      "modelProb": 0.6363636363636364,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401908943",
+        "arena": "United Center",
+        "spread": -4.653000000000006,
+        "totalPoints": 228.1966,
+        "mostLikelyScore": "112-116"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-16-POR-GSW",
+      "home": "GSW",
+      "away": "POR",
+      "pickedTeam": "GSW",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401898409",
+        "arena": "Chase Center",
+        "spread": 2.3282000000000096,
+        "totalPoints": 228.3158,
+        "mostLikelyScore": "115-113"
+      }
+    }
+  ]
+}
