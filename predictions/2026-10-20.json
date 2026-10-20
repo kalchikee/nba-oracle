@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T12:19:57.148Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-20-PHI-NYK",
+      "home": "NYK",
+      "away": "PHI",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401909089",
+        "arena": "Madison Square Garden",
+        "spread": 3.4410000000000025,
+        "totalPoints": 228.4282,
+        "mostLikelyScore": "116-112"
+      }
+    }
+  ]
+}
