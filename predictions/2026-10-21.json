@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-21",
+  "generatedAt": "2026-10-21T12:20:12.616Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-21-ATL-ORL",
+      "home": "ORL",
+      "away": "ATL",
+      "pickedTeam": "ORL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909834",
+        "arena": "Kia Center",
+        "spread": 0.3432999999999993,
+        "totalPoints": 228.4249,
+        "mostLikelyScore": "114-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-21-MIN-MIA",
+      "home": "MIA",
+      "away": "MIN",
+      "pickedTeam": "MIA",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909091",
+        "arena": "Kaseya Center",
+        "spread": 5.604200000000006,
+        "totalPoints": 228.9792,
+        "mostLikelyScore": "117-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-21-SAC-LAC",
+      "home": "LAC",
+      "away": "SAC",
+      "pickedTeam": "LAC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909842",
+        "arena": "Intuit Dome",
+        "spread": 5.867599999999996,
+        "totalPoints": 228.10039999999998,
+        "mostLikelyScore": "117-111"
+      }
+    }
+  ]
+}
