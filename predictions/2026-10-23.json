@@ -1,0 +1,151 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T12:18:34.311Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-23-CHI-MIL",
+      "home": "MIL",
+      "away": "CHI",
+      "pickedTeam": "MIL",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909848",
+        "arena": "Fiserv Forum",
+        "spread": 30.746700000000004,
+        "totalPoints": 227.3459,
+        "mostLikelyScore": "129-98"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-NYK-BOS",
+      "home": "BOS",
+      "away": "NYK",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909095",
+        "arena": "TD Garden",
+        "spread": 15.671099999999996,
+        "totalPoints": 227.6645,
+        "mostLikelyScore": "121-106"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-ATL-CHA",
+      "home": "CHA",
+      "away": "ATL",
+      "pickedTeam": "ATL",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909843",
+        "arena": "Spectrum Center",
+        "spread": -16.352900000000005,
+        "totalPoints": 228.6985,
+        "mostLikelyScore": "106-122"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-DAL-IND",
+      "home": "IND",
+      "away": "DAL",
+      "pickedTeam": "IND",
+      "pickedSide": "home",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909844",
+        "arena": "Gainbridge Fieldhouse",
+        "spread": 9.12230000000001,
+        "totalPoints": 228.15269999999998,
+        "mostLikelyScore": "119-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-DET-MIA",
+      "home": "MIA",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909847",
+        "arena": "Kaseya Center",
+        "spread": -11.649799999999999,
+        "totalPoints": 227.5262,
+        "mostLikelyScore": "108-119"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-NOP-UTA",
+      "home": "UTA",
+      "away": "NOP",
+      "pickedTeam": "NOP",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909849",
+        "arena": "Delta Center",
+        "spread": -19.3703,
+        "totalPoints": 228.1409,
+        "mostLikelyScore": "104-124"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-MEM-GSW",
+      "home": "GSW",
+      "away": "MEM",
+      "pickedTeam": "MEM",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909850",
+        "arena": "Chase Center",
+        "spread": -20.409999999999997,
+        "totalPoints": 228.3748,
+        "mostLikelyScore": "104-124"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-LAC-LAL",
+      "home": "LAL",
+      "away": "LAC",
+      "pickedTeam": "LAL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909851",
+        "arena": "crypto.com Arena",
+        "spread": 3.0009000000000015,
+        "totalPoints": 228.4939,
+        "mostLikelyScore": "115-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-23-POR-SAC",
+      "home": "SAC",
+      "away": "POR",
+      "pickedTeam": "POR",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909852",
+        "arena": "Golden 1 Center",
+        "spread": -30.20489999999998,
+        "totalPoints": 227.8251,
+        "mostLikelyScore": "99-129"
+      }
+    }
+  ]
+}
