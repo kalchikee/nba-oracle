@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-24",
+  "generatedAt": "2026-10-24T12:17:26.846Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-24-MIA-CHA",
+      "home": "CHA",
+      "away": "MIA",
+      "pickedTeam": "MIA",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909853",
+        "arena": "Spectrum Center",
+        "spread": -13.055400000000006,
+        "totalPoints": 224.8684,
+        "mostLikelyScore": "106-119"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-24-BKN-CLE",
+      "home": "CLE",
+      "away": "BKN",
+      "pickedTeam": "CLE",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909854",
+        "arena": "Rocket Arena",
+        "spread": 5.818300000000008,
+        "totalPoints": 227.74290000000002,
+        "mostLikelyScore": "117-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-24-MIL-PHI",
+      "home": "PHI",
+      "away": "MIL",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909855",
+        "arena": "Xfinity Mobile Arena",
+        "spread": -7.308400000000006,
+        "totalPoints": 231.3218,
+        "mostLikelyScore": "112-119"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-24-NOP-DEN",
+      "home": "DEN",
+      "away": "NOP",
+      "pickedTeam": "NOP",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909859",
+        "arena": "Ball Arena",
+        "spread": -35.529799999999994,
+        "totalPoints": 223.667,
+        "mostLikelyScore": "94-130"
+      }
+    }
+  ]
+}
