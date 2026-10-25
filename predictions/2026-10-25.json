@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-25",
+  "generatedAt": "2026-10-25T12:17:37.856Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-25-LAL-UTA",
+      "home": "UTA",
+      "away": "LAL",
+      "pickedTeam": "LAL",
+      "pickedSide": "away",
+      "modelProb": 0.7307692307692308,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909861",
+        "arena": "Delta Center",
+        "spread": -17.1032,
+        "totalPoints": 228.06740000000002,
+        "mostLikelyScore": "105-122"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-25-IND-BKN",
+      "home": "BKN",
+      "away": "IND",
+      "pickedTeam": "IND",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909862",
+        "arena": "Barclays Center",
+        "spread": -1.9993999999999943,
+        "totalPoints": 225.38400000000001,
+        "mostLikelyScore": "111-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-25-TOR-MIN",
+      "home": "MIN",
+      "away": "TOR",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909864",
+        "arena": "Target Center",
+        "spread": 3.2094000000000023,
+        "totalPoints": 228.1422,
+        "mostLikelyScore": "115-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-25-LAC-OKC",
+      "home": "OKC",
+      "away": "LAC",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909865",
+        "arena": "Paycom Center",
+        "spread": -12.445999999999998,
+        "totalPoints": 231.7756,
+        "mostLikelyScore": "110-122"
+      }
+    }
+  ]
+}
