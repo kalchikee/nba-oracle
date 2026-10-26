@@ -1,0 +1,119 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-26T13:42:41.159Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-26-WAS-CHA",
+      "home": "CHA",
+      "away": "WAS",
+      "pickedTeam": "WAS",
+      "pickedSide": "away",
+      "modelProb": 0.75,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909868",
+        "arena": "Spectrum Center",
+        "spread": -14.858499999999992,
+        "totalPoints": 231.4871,
+        "mostLikelyScore": "108-123"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-26-CHI-BOS",
+      "home": "BOS",
+      "away": "CHI",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909870",
+        "arena": "TD Garden",
+        "spread": -3.4424999999999955,
+        "totalPoints": 231.3545,
+        "mostLikelyScore": "114-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-26-DAL-MIA",
+      "home": "MIA",
+      "away": "DAL",
+      "pickedTeam": "MIA",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909871",
+        "arena": "Kaseya Center",
+        "spread": -2.775499999999994,
+        "totalPoints": 231.5795,
+        "mostLikelyScore": "114-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-26-PHX-OKC",
+      "home": "OKC",
+      "away": "PHX",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401909873",
+        "arena": "Paycom Center",
+        "spread": -3.170100000000005,
+        "totalPoints": 228.4755,
+        "mostLikelyScore": "112-116"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-26-ATL-HOU",
+      "home": "HOU",
+      "away": "ATL",
+      "pickedTeam": "HOU",
+      "pickedSide": "home",
+      "modelProb": 0.7050575676633255,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401909874",
+        "arena": "Toyota Center (Houston)",
+        "spread": -5.609800000000007,
+        "totalPoints": 228.3948,
+        "mostLikelyScore": "111-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-26-MEM-UTA",
+      "home": "UTA",
+      "away": "MEM",
+      "pickedTeam": "MEM",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909875",
+        "arena": "Delta Center",
+        "spread": -3.9161,
+        "totalPoints": 224.7895,
+        "mostLikelyScore": "110-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-26-GSW-DEN",
+      "home": "DEN",
+      "away": "GSW",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909876",
+        "arena": "Ball Arena",
+        "spread": -1.3311999999999955,
+        "totalPoints": 226.2532,
+        "mostLikelyScore": "112-114"
+      }
+    }
+  ]
+}
