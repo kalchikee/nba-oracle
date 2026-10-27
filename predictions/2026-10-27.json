@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T12:20:52.060Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-27-BKN-BOS",
+      "home": "BOS",
+      "away": "BKN",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909877",
+        "arena": "TD Garden",
+        "spread": 6.477699999999999,
+        "totalPoints": 224.9663,
+        "mostLikelyScore": "115-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-27-DET-NYK",
+      "home": "NYK",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909878",
+        "arena": "Madison Square Garden",
+        "spread": -13.054400000000001,
+        "totalPoints": 228.0288,
+        "mostLikelyScore": "107-121"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-27-SAC-SAS",
+      "home": "SAS",
+      "away": "SAC",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909879",
+        "arena": "Frost Bank Center",
+        "spread": 2.759600000000006,
+        "totalPoints": 231.506,
+        "mostLikelyScore": "117-114"
+      }
+    }
+  ]
+}
