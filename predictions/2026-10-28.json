@@ -1,0 +1,87 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T12:14:36.693Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-28-CHA-DET",
+      "home": "DET",
+      "away": "CHA",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909883",
+        "arena": "Little Caesars Arena",
+        "spread": 12.18289999999999,
+        "totalPoints": 228.7705,
+        "mostLikelyScore": "120-108"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-28-GSW-MIN",
+      "home": "MIN",
+      "away": "GSW",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909888",
+        "arena": "Target Center",
+        "spread": 4.439899999999994,
+        "totalPoints": 231.8553,
+        "mostLikelyScore": "118-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-28-DEN-NOP",
+      "home": "NOP",
+      "away": "DEN",
+      "pickedTeam": "NOP",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909889",
+        "arena": "Smoothie King Center",
+        "spread": 11.147199999999998,
+        "totalPoints": 232.1344,
+        "mostLikelyScore": "121-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-28-SAS-UTA",
+      "home": "UTA",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909890",
+        "arena": "Delta Center",
+        "spread": -4.2196,
+        "totalPoints": 224.7464,
+        "mostLikelyScore": "110-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-28-LAL-LAC",
+      "home": "LAC",
+      "away": "LAL",
+      "pickedTeam": "LAL",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909892",
+        "arena": "Intuit Dome",
+        "spread": -12.043900000000008,
+        "totalPoints": 228.0257,
+        "mostLikelyScore": "108-120"
+      }
+    }
+  ]
+}
