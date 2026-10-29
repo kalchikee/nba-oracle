@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T12:15:04.979Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-29-SAC-NOP",
+      "home": "NOP",
+      "away": "SAC",
+      "pickedTeam": "NOP",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909894",
+        "arena": "Smoothie King Center",
+        "spread": 8.824000000000012,
+        "totalPoints": 232.1806,
+        "mostLikelyScore": "120-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-29-MEM-POR",
+      "home": "POR",
+      "away": "MEM",
+      "pickedTeam": "POR",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909895",
+        "arena": "Moda Center",
+        "spread": 11.272300000000001,
+        "totalPoints": 225.1355,
+        "mostLikelyScore": "118-106"
+      }
+    }
+  ]
+}
