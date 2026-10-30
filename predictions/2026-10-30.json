@@ -1,0 +1,87 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-30",
+  "generatedAt": "2026-10-30T12:15:02.824Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-30-CHA-WAS",
+      "home": "WAS",
+      "away": "CHA",
+      "pickedTeam": "WAS",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909277",
+        "arena": "Capital One Arena",
+        "spread": 15.610699999999994,
+        "totalPoints": 228.48590000000002,
+        "mostLikelyScore": "122-106"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-30-CHI-BOS",
+      "home": "BOS",
+      "away": "CHI",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909278",
+        "arena": "TD Garden",
+        "spread": 6.153599999999997,
+        "totalPoints": 231.642,
+        "mostLikelyScore": "119-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-30-DET-BKN",
+      "home": "BKN",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909279",
+        "arena": "Barclays Center",
+        "spread": 7.6144999999999925,
+        "totalPoints": 228.3167,
+        "mostLikelyScore": "118-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-30-NYK-PHI",
+      "home": "PHI",
+      "away": "NYK",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909280",
+        "arena": "Xfinity Mobile Arena",
+        "spread": 1.3924000000000092,
+        "totalPoints": 231.435,
+        "mostLikelyScore": "116-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-30-LAC-MIN",
+      "home": "MIN",
+      "away": "LAC",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909284",
+        "arena": "Target Center",
+        "spread": 10.018900000000002,
+        "totalPoints": 228.4575,
+        "mostLikelyScore": "119-109"
+      }
+    }
+  ]
+}
