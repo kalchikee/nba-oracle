@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-10-31",
+  "generatedAt": "2026-10-31T12:11:25.080Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-10-31-PHI-CHA",
+      "home": "CHA",
+      "away": "PHI",
+      "pickedTeam": "PHI",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909897",
+        "arena": "Spectrum Center",
+        "spread": -14.316000000000003,
+        "totalPoints": 228.495,
+        "mostLikelyScore": "107-121"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-31-ATL-NOP",
+      "home": "NOP",
+      "away": "ATL",
+      "pickedTeam": "NOP",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909898",
+        "arena": "Smoothie King Center",
+        "spread": -3.052199999999999,
+        "totalPoints": 228.096,
+        "mostLikelyScore": "112-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-31-SAC-MEM",
+      "home": "MEM",
+      "away": "SAC",
+      "pickedTeam": "MEM",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909899",
+        "arena": "FedExForum",
+        "spread": 4.861999999999995,
+        "totalPoints": 227.9934,
+        "mostLikelyScore": "116-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-10-31-OKC-HOU",
+      "home": "HOU",
+      "away": "OKC",
+      "pickedTeam": "HOU",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909902",
+        "arena": "Toyota Center (Houston)",
+        "spread": 15.554099999999991,
+        "totalPoints": 227.90210000000002,
+        "mostLikelyScore": "122-106"
+      }
+    }
+  ]
+}
