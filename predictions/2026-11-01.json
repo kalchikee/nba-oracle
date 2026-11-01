@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-01",
+  "generatedAt": "2026-11-01T12:11:48.740Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-01-LAC-GSW",
+      "home": "GSW",
+      "away": "LAC",
+      "pickedTeam": "GSW",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909905",
+        "arena": "Chase Center",
+        "spread": 7.827500000000001,
+        "totalPoints": 228.0999,
+        "mostLikelyScore": "118-110"
+      }
+    }
+  ]
+}
