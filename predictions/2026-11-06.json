@@ -1,0 +1,87 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T12:12:32.558Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-06-BOS-CHA",
+      "home": "CHA",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909288",
+        "arena": "Spectrum Center",
+        "spread": -19.364499999999992,
+        "totalPoints": 228.2407,
+        "mostLikelyScore": "104-124"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-06-PHI-CLE",
+      "home": "CLE",
+      "away": "PHI",
+      "pickedTeam": "CLE",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909289",
+        "arena": "Rocket Arena",
+        "spread": 4.893600000000006,
+        "totalPoints": 228.4998,
+        "mostLikelyScore": "116-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-06-UTA-DAL",
+      "home": "DAL",
+      "away": "UTA",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909290",
+        "arena": "American Airlines Center",
+        "spread": 0.8564999999999969,
+        "totalPoints": 227.76909999999998,
+        "mostLikelyScore": "114-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-06-OKC-MEM",
+      "home": "MEM",
+      "away": "OKC",
+      "pickedTeam": "MEM",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909291",
+        "arena": "FedExForum",
+        "spread": 6.823400000000007,
+        "totalPoints": 228.4328,
+        "mostLikelyScore": "118-110"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-06-SAS-SAC",
+      "home": "SAC",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.7314309401463205,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909295",
+        "arena": "Golden 1 Center",
+        "spread": -10.455100000000002,
+        "totalPoints": 228.04989999999998,
+        "mostLikelyScore": "109-119"
+      }
+    }
+  ]
+}
