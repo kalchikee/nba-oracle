@@ -1,0 +1,87 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T12:11:38.084Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-07-BKN-ATL",
+      "home": "ATL",
+      "away": "BKN",
+      "pickedTeam": "ATL",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909939",
+        "arena": "State Farm Arena",
+        "spread": 13.501499999999993,
+        "totalPoints": 228.4539,
+        "mostLikelyScore": "121-107"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-07-NYK-CLE",
+      "home": "CLE",
+      "away": "NYK",
+      "pickedTeam": "CLE",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909940",
+        "arena": "Rocket Arena",
+        "spread": 11.786500000000004,
+        "totalPoints": 228.2733,
+        "mostLikelyScore": "120-108"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-07-WAS-OKC",
+      "home": "OKC",
+      "away": "WAS",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909941",
+        "arena": "Paycom Center",
+        "spread": 3.3278000000000105,
+        "totalPoints": 228.4174,
+        "mostLikelyScore": "116-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-07-ORL-GSW",
+      "home": "GSW",
+      "away": "ORL",
+      "pickedTeam": "GSW",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909942",
+        "arena": "Chase Center",
+        "spread": 9.308900000000008,
+        "totalPoints": 228.3025,
+        "mostLikelyScore": "119-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-07-HOU-PHX",
+      "home": "PHX",
+      "away": "HOU",
+      "pickedTeam": "HOU",
+      "pickedSide": "away",
+      "modelProb": 0.7307692307692308,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909943",
+        "arena": "Mortgage Matchup Center",
+        "spread": -4.100200000000001,
+        "totalPoints": 224.816,
+        "mostLikelyScore": "110-114"
+      }
+    }
+  ]
+}
