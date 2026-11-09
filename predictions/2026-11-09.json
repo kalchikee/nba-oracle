@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09T12:13:13.131Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-09-CLE-CHA",
+      "home": "CHA",
+      "away": "CLE",
+      "pickedTeam": "CLE",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909953",
+        "arena": "Spectrum Center",
+        "spread": -20.330799999999996,
+        "totalPoints": 231.72480000000002,
+        "mostLikelyScore": "106-126"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-09-WAS-DET",
+      "home": "DET",
+      "away": "WAS",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909954",
+        "arena": "Little Caesars Arena",
+        "spread": 0.7749000000000024,
+        "totalPoints": 227.9411,
+        "mostLikelyScore": "114-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-09-MEM-TOR",
+      "home": "TOR",
+      "away": "MEM",
+      "pickedTeam": "MEM",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909955",
+        "arena": "Scotiabank Arena",
+        "spread": 2.872499999999988,
+        "totalPoints": 228.4413,
+        "mostLikelyScore": "116-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-09-SAS-PHX",
+      "home": "PHX",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909958",
+        "arena": "Mortgage Matchup Center",
+        "spread": -8.912700000000001,
+        "totalPoints": 228.5021,
+        "mostLikelyScore": "110-118"
+      }
+    }
+  ]
+}
