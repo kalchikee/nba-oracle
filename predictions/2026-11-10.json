@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-10",
+  "generatedAt": "2026-11-10T12:12:13.561Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-10-MIL-NYK",
+      "home": "NYK",
+      "away": "MIL",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909960",
+        "arena": "Madison Square Garden",
+        "spread": 1.6602999999999923,
+        "totalPoints": 231.62470000000002,
+        "mostLikelyScore": "116-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-10-BOS-PHI",
+      "home": "PHI",
+      "away": "BOS",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909961",
+        "arena": "Xfinity Mobile Arena",
+        "spread": -3.6976999999999975,
+        "totalPoints": 231.6363,
+        "mostLikelyScore": "114-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-10-LAC-PHX",
+      "home": "PHX",
+      "away": "LAC",
+      "pickedTeam": "PHX",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909962",
+        "arena": "Mortgage Matchup Center",
+        "spread": -1.6175000000000068,
+        "totalPoints": 231.7749,
+        "mostLikelyScore": "115-116"
+      }
+    }
+  ]
+}
