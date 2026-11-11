@@ -1,0 +1,103 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T12:12:55.312Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-11-CLE-NYK",
+      "home": "NYK",
+      "away": "CLE",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909967",
+        "arena": "Madison Square Garden",
+        "spread": -5.268500000000003,
+        "totalPoints": 232.05450000000002,
+        "mostLikelyScore": "113-118"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-11-BOS-TOR",
+      "home": "TOR",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909968",
+        "arena": "Scotiabank Arena",
+        "spread": 0.1379000000000019,
+        "totalPoints": 224.8577,
+        "mostLikelyScore": "112-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-11-SAS-CHI",
+      "home": "CHI",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.7307692307692308,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909969",
+        "arena": "United Center",
+        "spread": -5.520499999999998,
+        "totalPoints": 232.0043,
+        "mostLikelyScore": "113-118"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-11-DEN-MEM",
+      "home": "MEM",
+      "away": "DEN",
+      "pickedTeam": "MEM",
+      "pickedSide": "home",
+      "modelProb": 0.6363636363636364,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909970",
+        "arena": "FedExForum",
+        "spread": 1.0698000000000008,
+        "totalPoints": 228.68380000000002,
+        "mostLikelyScore": "114-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-11-LAL-MIL",
+      "home": "MIL",
+      "away": "LAL",
+      "pickedTeam": "LAL",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909971",
+        "arena": "Fiserv Forum",
+        "spread": -15.138899999999992,
+        "totalPoints": 231.7471,
+        "mostLikelyScore": "108-123"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-11-BKN-NOP",
+      "home": "NOP",
+      "away": "BKN",
+      "pickedTeam": "NOP",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909972",
+        "arena": "Smoothie King Center",
+        "spread": 9.918000000000006,
+        "totalPoints": 224.8842,
+        "mostLikelyScore": "117-107"
+      }
+    }
+  ]
+}
