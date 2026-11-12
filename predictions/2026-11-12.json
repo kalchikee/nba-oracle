@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-12",
+  "generatedAt": "2026-11-12T12:12:55.086Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-12-TOR-PHI",
+      "home": "PHI",
+      "away": "TOR",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909976",
+        "arena": "Xfinity Mobile Arena",
+        "spread": -4.671999999999997,
+        "totalPoints": 224.792,
+        "mostLikelyScore": "110-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-12-DET-WAS",
+      "home": "WAS",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909977",
+        "arena": "Capital One Arena",
+        "spread": -2.6459000000000117,
+        "totalPoints": 228.3425,
+        "mostLikelyScore": "113-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-12-DAL-MIN",
+      "home": "MIN",
+      "away": "DAL",
+      "pickedTeam": "MIN",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909978",
+        "arena": "Target Center",
+        "spread": 6.241399999999999,
+        "totalPoints": 228.9736,
+        "mostLikelyScore": "117-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-12-CHA-PHX",
+      "home": "PHX",
+      "away": "CHA",
+      "pickedTeam": "PHX",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401909979",
+        "arena": "Mortgage Matchup Center",
+        "spread": 13.827000000000012,
+        "totalPoints": 225.32580000000002,
+        "mostLikelyScore": "119-105"
+      }
+    }
+  ]
+}
