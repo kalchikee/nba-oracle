@@ -1,0 +1,119 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-15",
+  "generatedAt": "2026-11-15T12:11:30.616Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-15-IND-PHI",
+      "home": "PHI",
+      "away": "IND",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909985",
+        "arena": "Xfinity Mobile Arena",
+        "spread": 0.278499999999994,
+        "totalPoints": 231.5073,
+        "mostLikelyScore": "116-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-15-LAL-PHX",
+      "home": "PHX",
+      "away": "LAL",
+      "pickedTeam": "LAL",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909986",
+        "arena": "Mortgage Matchup Center",
+        "spread": -7.819800000000001,
+        "totalPoints": 228.1076,
+        "mostLikelyScore": "110-118"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-15-CHA-LAC",
+      "home": "LAC",
+      "away": "CHA",
+      "pickedTeam": "LAC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909987",
+        "arena": "Intuit Dome",
+        "spread": 13.05919999999999,
+        "totalPoints": 225.4346,
+        "mostLikelyScore": "119-106"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-15-SAS-UTA",
+      "home": "UTA",
+      "away": "SAS",
+      "pickedTeam": "SAS",
+      "pickedSide": "away",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909988",
+        "arena": "Delta Center",
+        "spread": -14.904899999999998,
+        "totalPoints": 228.1825,
+        "mostLikelyScore": "107-121"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-15-DAL-BOS",
+      "home": "BOS",
+      "away": "DAL",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909989",
+        "arena": "TD Garden",
+        "spread": 4.407200000000003,
+        "totalPoints": 228.4998,
+        "mostLikelyScore": "116-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-15-NYK-TOR",
+      "home": "TOR",
+      "away": "NYK",
+      "pickedTeam": "NYK",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909990",
+        "arena": "Scotiabank Arena",
+        "spread": 4.881799999999998,
+        "totalPoints": 231.702,
+        "mostLikelyScore": "118-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-15-OKC-SAC",
+      "home": "SAC",
+      "away": "OKC",
+      "pickedTeam": "OKC",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909993",
+        "arena": "Golden 1 Center",
+        "spread": -5.819299999999998,
+        "totalPoints": 228.4911,
+        "mostLikelyScore": "111-117"
+      }
+    }
+  ]
+}
