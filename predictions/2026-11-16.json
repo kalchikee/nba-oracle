@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-16",
+  "generatedAt": "2026-11-16T12:16:57.410Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-16-ORL-BOS",
+      "home": "BOS",
+      "away": "ORL",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909994",
+        "arena": "TD Garden",
+        "spread": 7.205100000000002,
+        "totalPoints": 224.96390000000002,
+        "mostLikelyScore": "116-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-16-CHI-CLE",
+      "home": "CLE",
+      "away": "CHI",
+      "pickedTeam": "CLE",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909995",
+        "arena": "Rocket Arena",
+        "spread": 0.2224999999999966,
+        "totalPoints": 228.1309,
+        "mostLikelyScore": "114-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-16-GSW-NOP",
+      "home": "NOP",
+      "away": "GSW",
+      "pickedTeam": "GSW",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910000",
+        "arena": "Smoothie King Center",
+        "spread": -1.6219999999999999,
+        "totalPoints": 224.873,
+        "mostLikelyScore": "112-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-16-PHX-DEN",
+      "home": "DEN",
+      "away": "PHX",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910001",
+        "arena": "Ball Arena",
+        "spread": -0.28759999999999764,
+        "totalPoints": 226.1316,
+        "mostLikelyScore": "113-113"
+      }
+    }
+  ]
+}
