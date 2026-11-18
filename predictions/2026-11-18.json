@@ -1,0 +1,103 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-18",
+  "generatedAt": "2026-11-18T12:12:06.534Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-18-MIL-MIA",
+      "home": "MIA",
+      "away": "MIL",
+      "pickedTeam": "MIA",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910009",
+        "arena": "Kaseya Center",
+        "spread": 12.317599999999999,
+        "totalPoints": 224.9412,
+        "mostLikelyScore": "119-106"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-18-DET-NOP",
+      "home": "NOP",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910013",
+        "arena": "Smoothie King Center",
+        "spread": 0.11140000000000327,
+        "totalPoints": 224.3744,
+        "mostLikelyScore": "112-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-18-ATL-OKC",
+      "home": "OKC",
+      "away": "ATL",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910014",
+        "arena": "Paycom Center",
+        "spread": -2.107600000000005,
+        "totalPoints": 228.01139999999998,
+        "mostLikelyScore": "113-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-18-GSW-DAL",
+      "home": "DAL",
+      "away": "GSW",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.6363636363636364,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910016",
+        "arena": "American Airlines Center",
+        "spread": -2.2520999999999987,
+        "totalPoints": 231.97629999999998,
+        "mostLikelyScore": "115-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-18-BOS-DEN",
+      "home": "DEN",
+      "away": "BOS",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910015",
+        "arena": "Ball Arena",
+        "spread": -3.5524000000000058,
+        "totalPoints": 225.7294,
+        "mostLikelyScore": "111-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-18-UTA-LAL",
+      "home": "LAL",
+      "away": "UTA",
+      "pickedTeam": "LAL",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910017",
+        "arena": "crypto.com Arena",
+        "spread": 16.44290000000001,
+        "totalPoints": 227.8605,
+        "mostLikelyScore": "122-106"
+      }
+    }
+  ]
+}
