@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-19",
+  "generatedAt": "2026-11-19T12:12:05.507Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-19-GSW-MEM",
+      "home": "MEM",
+      "away": "GSW",
+      "pickedTeam": "MEM",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910019",
+        "arena": "FedExForum",
+        "spread": 11.265599999999992,
+        "totalPoints": 228.26479999999998,
+        "mostLikelyScore": "119-109"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-19-POR-MIL",
+      "home": "MIL",
+      "away": "POR",
+      "pickedTeam": "POR",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910020",
+        "arena": "Fiserv Forum",
+        "spread": -8.375799999999998,
+        "totalPoints": 232.0234,
+        "mostLikelyScore": "112-120"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-19-LAC-SAS",
+      "home": "SAS",
+      "away": "LAC",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910022",
+        "arena": "Frost Bank Center",
+        "spread": 2.1979999999999933,
+        "totalPoints": 228.47199999999998,
+        "mostLikelyScore": "115-113"
+      }
+    }
+  ]
+}
