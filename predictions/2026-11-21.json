@@ -1,0 +1,71 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-21",
+  "generatedAt": "2026-11-21T12:11:51.980Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-21-MIL-PHI",
+      "home": "PHI",
+      "away": "MIL",
+      "pickedTeam": "PHI",
+      "pickedSide": "home",
+      "modelProb": 0.85,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910023",
+        "arena": "Xfinity Mobile Arena",
+        "spread": 6.263500000000008,
+        "totalPoints": 231.3413,
+        "mostLikelyScore": "119-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-21-LAC-DAL",
+      "home": "DAL",
+      "away": "LAC",
+      "pickedTeam": "DAL",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910025",
+        "arena": "American Airlines Center",
+        "spread": 0.7139000000000095,
+        "totalPoints": 231.81029999999998,
+        "mostLikelyScore": "116-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-21-NOP-SAS",
+      "home": "SAS",
+      "away": "NOP",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910027",
+        "arena": "Frost Bank Center",
+        "spread": 2.16040000000001,
+        "totalPoints": 224.9606,
+        "mostLikelyScore": "113-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-21-BOS-SAC",
+      "home": "SAC",
+      "away": "BOS",
+      "pickedTeam": "BOS",
+      "pickedSide": "away",
+      "modelProb": 0.7307692307692308,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910028",
+        "arena": "Golden 1 Center",
+        "spread": -3.604299999999995,
+        "totalPoints": 228.2857,
+        "mostLikelyScore": "112-116"
+      }
+    }
+  ]
+}
