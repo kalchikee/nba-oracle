@@ -1,0 +1,55 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-22",
+  "generatedAt": "2026-11-22T12:11:21.121Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-22-OKC-MIA",
+      "home": "MIA",
+      "away": "OKC",
+      "pickedTeam": "MIA",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910030",
+        "arena": "Kaseya Center",
+        "spread": 7.715500000000006,
+        "totalPoints": 232.0627,
+        "mostLikelyScore": "120-112"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-22-DEN-CHI",
+      "home": "CHI",
+      "away": "DEN",
+      "pickedTeam": "DEN",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910032",
+        "arena": "United Center",
+        "spread": -2.948900000000009,
+        "totalPoints": 228.0205,
+        "mostLikelyScore": "112-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-22-IND-NYK",
+      "home": "NYK",
+      "away": "IND",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401910034",
+        "arena": "Madison Square Garden",
+        "spread": -3.0789999999999935,
+        "totalPoints": 231.91660000000002,
+        "mostLikelyScore": "114-117"
+      }
+    }
+  ]
+}
