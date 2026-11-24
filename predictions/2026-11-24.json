@@ -1,0 +1,39 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-24",
+  "generatedAt": "2026-11-24T12:13:15.755Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-24-DET-ORL",
+      "home": "ORL",
+      "away": "DET",
+      "pickedTeam": "DET",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909314",
+        "arena": "Kia Center",
+        "spread": -4.598399999999998,
+        "totalPoints": 225.0482,
+        "mostLikelyScore": "110-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-24-DAL-DEN",
+      "home": "DEN",
+      "away": "DAL",
+      "pickedTeam": "DEN",
+      "pickedSide": "home",
+      "modelProb": 0.7755102040816326,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909316",
+        "arena": "Ball Arena",
+        "spread": 1.9852999999999952,
+        "totalPoints": 226.1603,
+        "mostLikelyScore": "114-112"
+      }
+    }
+  ]
+}
