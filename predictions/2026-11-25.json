@@ -1,0 +1,103 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-25",
+  "generatedAt": "2026-11-25T12:13:07.038Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-25-CHI-CHA",
+      "home": "CHA",
+      "away": "CHI",
+      "pickedTeam": "CHI",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909318",
+        "arena": "Spectrum Center",
+        "spread": -19.228300000000004,
+        "totalPoints": 228.16930000000002,
+        "mostLikelyScore": "105-124"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-25-CLE-NYK",
+      "home": "NYK",
+      "away": "CLE",
+      "pickedTeam": "NYK",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909319",
+        "arena": "Madison Square Garden",
+        "spread": -8.834199999999996,
+        "totalPoints": 231.44459999999998,
+        "mostLikelyScore": "111-120"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-25-MIN-OKC",
+      "home": "OKC",
+      "away": "MIN",
+      "pickedTeam": "OKC",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909320",
+        "arena": "Paycom Center",
+        "spread": -5.738500000000002,
+        "totalPoints": 228.3241,
+        "mostLikelyScore": "111-117"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-25-LAC-MEM",
+      "home": "MEM",
+      "away": "LAC",
+      "pickedTeam": "MEM",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909321",
+        "arena": "FedExForum",
+        "spread": 6.228099999999998,
+        "totalPoints": 228.2249,
+        "mostLikelyScore": "117-111"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-25-PHX-HOU",
+      "home": "HOU",
+      "away": "PHX",
+      "pickedTeam": "HOU",
+      "pickedSide": "home",
+      "modelProb": 0.6818181818181818,
+      "confidenceTier": "high",
+      "extra": {
+        "gameId": "401909323",
+        "arena": "Toyota Center (Houston)",
+        "spread": 1.0631999999999948,
+        "totalPoints": 228.4862,
+        "mostLikelyScore": "114-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-25-SAC-GSW",
+      "home": "GSW",
+      "away": "SAC",
+      "pickedTeam": "GSW",
+      "pickedSide": "home",
+      "modelProb": 0.7222222222222222,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909324",
+        "arena": "Chase Center",
+        "spread": 4.540400000000005,
+        "totalPoints": 231.6302,
+        "mostLikelyScore": "118-113"
+      }
+    }
+  ]
+}
