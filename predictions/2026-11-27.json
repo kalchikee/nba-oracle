@@ -1,0 +1,103 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-27",
+  "generatedAt": "2026-11-27T12:12:57.300Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-27-MIL-DET",
+      "home": "DET",
+      "away": "MIL",
+      "pickedTeam": "DET",
+      "pickedSide": "home",
+      "modelProb": 0.8315789473684211,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909327",
+        "arena": "Little Caesars Arena",
+        "spread": 4.0214,
+        "totalPoints": 231.5324,
+        "mostLikelyScore": "118-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-27-BKN-TOR",
+      "home": "TOR",
+      "away": "BKN",
+      "pickedTeam": "TOR",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909329",
+        "arena": "Scotiabank Arena",
+        "spread": 1.384299999999996,
+        "totalPoints": 232.2429,
+        "mostLikelyScore": "116-115"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-27-ATL-BOS",
+      "home": "BOS",
+      "away": "ATL",
+      "pickedTeam": "BOS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909330",
+        "arena": "TD Garden",
+        "spread": -1.8999000000000024,
+        "totalPoints": 227.2561,
+        "mostLikelyScore": "113-114"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-27-LAL-SAS",
+      "home": "SAS",
+      "away": "LAL",
+      "pickedTeam": "SAS",
+      "pickedSide": "home",
+      "modelProb": 0.6448598130841121,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909333",
+        "arena": "Frost Bank Center",
+        "spread": -2.9133999999999958,
+        "totalPoints": 224.8666,
+        "mostLikelyScore": "111-113"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-27-DEN-UTA",
+      "home": "UTA",
+      "away": "DEN",
+      "pickedTeam": "DEN",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401909334",
+        "arena": "Delta Center",
+        "spread": -4.673900000000003,
+        "totalPoints": 228.7089,
+        "mostLikelyScore": "112-116"
+      }
+    },
+    {
+      "gameId": "nba-2026-11-27-GSW-POR",
+      "home": "POR",
+      "away": "GSW",
+      "pickedTeam": "POR",
+      "pickedSide": "home",
+      "modelProb": 0.72,
+      "confidenceTier": "extreme",
+      "extra": {
+        "gameId": "401909336",
+        "arena": "Moda Center",
+        "spread": 1.1597000000000008,
+        "totalPoints": 228.4511,
+        "mostLikelyScore": "115-113"
+      }
+    }
+  ]
+}
