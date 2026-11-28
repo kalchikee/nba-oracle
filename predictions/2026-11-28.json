@@ -1,0 +1,23 @@
+{
+  "sport": "NBA",
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28T12:11:35.965Z",
+  "picks": [
+    {
+      "gameId": "nba-2026-11-28-OKC-MIL",
+      "home": "MIL",
+      "away": "OKC",
+      "pickedTeam": "OKC",
+      "pickedSide": "away",
+      "modelProb": 0.625,
+      "confidenceTier": "medium",
+      "extra": {
+        "gameId": "401910049",
+        "arena": "Fiserv Forum",
+        "spread": -1.3695000000000022,
+        "totalPoints": 228.4017,
+        "mostLikelyScore": "113-115"
+      }
+    }
+  ]
+}
